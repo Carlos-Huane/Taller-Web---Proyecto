@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <!-- Botón Añadir al carrito -->
                             <button class="btn btn-primary mt-3" 
                                 onclick="añadirAlCarrito('${anillo.nombre}', ${anillo.precio}, '${anillo.talla}', this)">
-                                <i class="bi bi-cart"></i> Añadir al carrito
+                                <i class="bi bi-cart"></i> Comprar ahora
                             </button>
                         </div>
                     </div>
