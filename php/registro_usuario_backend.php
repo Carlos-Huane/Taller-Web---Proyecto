@@ -17,14 +17,14 @@
         echo '
             <script>
                 alert("Usuario almacenado exitosamente");
-                window.location= "../index.php";
+                window.location= "../login.php";
             </script>
         ';
     }else{
         echo '
             <script>
                 alert("Inténtenlo de nuevo, hubo un error");
-                window.location= "../index.php";
+                window.location= "../login.php";
             </script>
         ';
     }
