@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #6c757d;
+}
+
+.profile h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.inventory-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.inventory-item {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px;
+}
+
+@media (max-width: 780px) {
+    .inventory-item {
+        text-align: center;
+    }
+
+    .inventory-item .col-md-6, 
+    .inventory-item .col-md-3 {
+        display: block;
+        width: 100%;
+    }
+
+    .inventory-item img {
+        margin: 0 auto;
+    }
+}
