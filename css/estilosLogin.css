@@ -1,0 +1,166 @@
+
+
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    
+}
+
+body{
+    background-image: url(../images/bg4.jpg); /*imagen de fondo*/
+    background-size: cover; /*para que se adapte el tamaño*/
+    background-repeat: no-repeat; /*para que no se repita el fondo*/
+    background-position: center; /*para que la imagen vaya en el centro de la pág*/
+    background-attachment: fixed; /*para que se adapte al tamaño de la página*/
+}
+
+main{
+    width: 100%; /*ancho*/
+    padding: 20px; /*área alrededor del contenido de un elemento*/
+    margin: auto; /*para que se centre*/
+    margin-top: 100px; /*para que esté más abajo*/
+}
+
+.contenedor__todo{
+    width:100%;
+    max-width: 800px; /*ancho máximo*/
+    margin: auto; /*para que se mantenga centrado*/
+    position: relative;
+}
+
+.caja__trasera{
+    width: 100%;
+    padding: 10px 20px; /*margen alrededor alrededor*/
+    display: flex; /*efecto*/
+    justify-content: center;
+    backdrop-filter: blur(10px); /*desenfoque*/
+    background-color: rgba(170, 201, 231, 0.5); /*color-color-color-opacidad*/
+}
+
+.caja__trasera div{ 
+    margin: 100px 40px; /*margen*/
+    color: white; /*color del texto*/
+    transition: all 500ms; /*transición al hacer movimientos*/
+}
+
+.caja__trasera div p, /*párrafo*/
+.caja__trasera div button{ /*botón*/
+    margin-top: 30px; /*espaciado*/
+}
+
+.caja__trasera div h3{
+    font-weight: 400; /*grosor al título*/
+    font-size: 26px; /*tamaño*/
+}
+
+.caja__trasera button{
+    padding: 10px 40px; /*alto y espaciado entre los costados del texto dentro del botón*/
+    border: 2px solid #fff; /*grosor del borde y su color x*/
+    background: transparent; /*fondo del botón*/
+    font-size: 14px; /*tamaño del texto*/
+    font-weight: 600; /*grosor del texto*/
+    color: white; /*color del texto*/
+    cursor: pointer; /*manito al pasar el cursor por el botón*/
+    outline: none; /*eliminar la línea negra al pasar el cursor*/
+    transition: all 300ms; /*transición a los botones con el efecto hover*/
+}
+
+.caja__trasera button:hover{ /*efecto hover*/
+    background: #fff;
+    color: #A1BED1;
+}
+
+/*Formularios*/
+.contenedor__login-register{
+    display:flex; /*para posicionarse de manera verticalmente*/
+    align-items: center; /*para centrarlo en el centro de la página*/
+    max-width: 380px; /*ancho máximo*/
+    position: relative;
+    top: -185px; /*para que se posicione justo en el centro*/
+    left: 10px;
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}   
+
+.contenedor__login-register form{
+    width: 100%;
+    padding: 80px 20px;
+    background: #fff;
+    position: absolute; /*para que se pueda mover*/
+    border-radius: 20px; /*borde redondeado*/
+}
+
+.contenedor__login-register form h2{
+    font-size: 30px; /*tamaño*/
+    text-align: center; /*centrado*/
+    margin-bottom: 20px; /*espaciado*/
+    color:#A1BED1;
+}
+
+.contenedor__login-register form input{
+    width: 100%;
+    margin-top:20px; /*espaciado entre los inputs*/
+    padding: 10px; /*distancia entre los bordes y el texto*/
+    border: none;
+    background: #f2f2f2; /*color de los input*/
+    font-size: 16px; /*tamaño del texto*/
+    outline: none; /*para eliminar el borde negro*/
+}
+
+.contenedor__login-register form button{
+    padding: 10px 40px;
+    margin-top:  40px;
+    border: none;
+    font-size: 14px; /*tamaño del texto*/
+    background: #A1BED1; /*color del fondo*/
+    color: white; /*color del texto*/
+    cursor: pointer;
+    outline: none;
+}
+
+/*Para quitar el formulario de registrarse*/
+.formulario__login{
+    opacity:1; /*opacidad*/
+    display:block;
+
+}
+
+.formulario__register{
+    /*display:block; /*así aparece el formulario regis*/
+    display: none; /*así desaparece el formulario register*/
+}
+
+/*El responsive design*/
+
+@media screen and (max-width: 850px){
+    main{
+        margin-top: 50px; /*cuando la ventana tenga este ancho*/
+    }
+
+    .caja__trasera{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .caja__trasera div{
+        margin:0px;
+        position: absolute;
+    }
+
+    /*Formulario*/
+
+    .contenedor__login-register{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedor__login-register form{
+        position: relative;
+    }
+
+}
