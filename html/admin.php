@@ -1,3 +1,34 @@
+<?php
+    session_start(); // Iniciar la sesión
+
+    // Verificar si el usuario ha iniciado sesión
+    if (!isset($_SESSION['usuario'])) {
+        header("location: login.php"); // Redirigir a la página de login si no está autenticado
+        exit();
+    }
+
+    // Incluir el archivo de conexión a la base de datos
+    include '../php/conexion_backend.php';
+
+    // Obtener el correo del usuario desde la sesión
+    $correo = $_SESSION['usuario'];
+
+    // Consultar los datos del usuario en la base de datos
+    $query = "SELECT nombre_completo, correo FROM usuarios WHERE correo = '$correo'";
+    $result = mysqli_query($conexion, $query);
+
+    // Verificar si se encontró el usuario
+    if (mysqli_num_rows($result) > 0) {
+        $usuario = mysqli_fetch_assoc($result); // Obtener los datos del usuario
+    } else {
+        echo "No se encontraron datos del usuario.";
+        exit();
+    }
+
+    mysqli_close($conexion); // Cerrar la conexión a la base de datos
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

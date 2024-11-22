@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['usuario'])){
+        header("location: ../html/homepage.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,14 +36,14 @@
             <!--Formulario de login y registro-->
             <div class="contenedor__login-register">
                 <!--login-->
-                <form action="php/login_usuario_be.php" method= "POST" class="formulario__login">
+                <form action="../php/login_usuario_backend.php" method= "POST" class="formulario__login">
                     <h2>Iniciar sesión</h2>
                     <input type="text" placeholder="Correo electrónico" name="correo">
                     <input type="password" placeholder="Contraseña" name ="contrasena">
                     <button>Entrar</button>
                 </form>
                 <!--registro por método Post para que los datos en la url no se muestren-->
-                <form action="registro_usuario_backend.php" method= "POST" class="formulario__register">
+                <form action="../php/registro_usuario_backend.php" method= "POST" class="formulario__register">
                     <h2>Registrarse</h2>
                     <input type="text" placeholder="Nombre Completo" name="nombre_completo">
                     <input type="text" placeholder="Correo electrónico" name="correo">

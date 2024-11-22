@@ -13,7 +13,7 @@ let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
 
 document.addEventListener('DOMContentLoaded', function () {
     const cardsContainer = document.getElementById('cardsContainer');
-
+    
     // Renderiza los productos personalizados
     function renderPersonalizados(personalizados) {
         cardsContainer.innerHTML = ''; 
