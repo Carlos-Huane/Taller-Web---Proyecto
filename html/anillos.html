@@ -14,34 +14,37 @@
 </head>
 <body>
     <!-- HEADER -->
-    <header class="bg-secondary text-black py-3 position-relative">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center position-relative">
+    <header class="bg-light border-bottom border-secondary shadow-sm">
+        <div class="container py-3">
+            <div class="d-flex justify-content-between align-items-center">
                 <!-- Título centrado -->
-                <h2 class="position-absolute top-50 start-50 translate-middle">
-                    Silver Heart's
-                </h2>
-                <!-- Íconos de Usuario e Historial alineados a la derecha -->
-                <div class="d-flex align-items-center ms-auto">
-                    <a href="http://localhost/Taller-Web---Proyecto/php/login.php" class="btn btn-light me-3 d-flex align-items-center icon-btn">
-                        <i class="bi bi-person me-2"></i>
+                <div class="flex-grow-1 text-center">
+                    <a href="homepage.html" class="text-decoration-none">
+                        <h2 class="text-secondary fw-bold fs-1 m-0">Silver Heart's</h2>
                     </a>
-                    <a href="historial.html" class="btn btn-light d-flex align-items-center icon-btn">
-                        <i class="bi bi-clock me-2"></i>
+                </div>
+                <!-- Iconos de usuario e historial alineados a la derecha -->
+                <div class="d-flex align-items-center">
+                    <a href="http://localhost/Taller-Web---Proyecto/php/login.php" class="btn btn-outline-secondary me-3 d-flex align-items-center">
+                        <i class="bi bi-person me-2"></i> <span class="d-none d-md-inline fs-5">Login</span>
+                    </a>
+                    <a href="historial.html" class="btn btn-outline-secondary d-flex align-items-center">
+                        <i class="bi bi-clock me-2"></i> <span class="d-none d-md-inline fs-5">Historial</span>
                     </a>
                 </div>
             </div>
-    
-            <!-- Navegación centrada -->
-            <nav class="d-flex justify-content-center mt-3">
-                <a href="homepage.html" class="btn btn-light mx-2">Inicio</a>
-                <a href="anillos.html" class="btn btn-light mx-2">Anillos</a>
-                <a href="cadenas.html" class="btn btn-light mx-2">Cadenas</a>
-                <a href="pulseras.html" class="btn btn-light mx-2">Pulseras</a>
-                <a href="personalizado.html" class="btn btn-light mx-2">Personalizados</a>
-                <a href="contactanos.html" class="btn btn-light mx-2">Contáctanos</a>
-            </nav>
         </div>
+        <!-- Navegación -->
+        <nav class="bg-light py-2">
+            <div class="container d-flex justify-content-center">
+                <a href="homepage.html" class="nav-link text-secondary mx-3 fs-5">Inicio</a>
+                <a href="anillos.html" class="nav-link text-secondary mx-3 fs-5">Anillos</a>
+                <a href="cadenas.html" class="nav-link text-secondary mx-3 fs-5">Cadenas</a>
+                <a href="pulseras.html" class="nav-link text-secondary mx-3 fs-5">Pulseras</a>
+                <a href="personalizado.html" class="nav-link text-secondary mx-3 fs-5">Personalizados</a>
+                <a href="contactanos.html" class="nav-link text-secondary mx-3 fs-5">Contáctanos</a>
+            </div>
+        </nav>
     </header>
 
     <!-- MAIN SECTION -->

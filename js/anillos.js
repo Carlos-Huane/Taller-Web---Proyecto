@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
 
                             <!-- Botón Añadir al carrito -->
-                            <button class="btn btn-primary mt-3" 
+                            <button class="btn btn-secondary mt-3"
+                                src="../html/ventanaEmergente.html"
                                 onclick="añadirAlCarrito('${anillo.nombre}', ${anillo.precio}, '${anillo.talla}', this)">
                                 <i class="bi bi-cart"></i> Comprar ahora
                             </button>
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Añade productos al carrito
     window.añadirAlCarrito = function (nombre, precio, talla, button) {
+        window.location.href = "../html/ventanaEmergente.html";
         const cantidad = parseInt(button.parentElement.querySelector('.cantidad').textContent);
 
         // Verifica si ya existe en el carrito

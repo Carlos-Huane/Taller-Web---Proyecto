@@ -12,81 +12,102 @@
 
 <body>
     <!-- HEADER -->
-    <header class="bg-secondary text-black py-3 position-relative">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center position-relative">
+    <header class="bg-light border-bottom border-secondary shadow-sm">
+        <div class="container py-3">
+            <div class="d-flex justify-content-between align-items-center">
                 <!-- Título centrado -->
-                <h2 class="position-absolute top-50 start-50 translate-middle">
-                    Silver Heart's
-                </h2>
-                <!-- Íconos de Usuario e Historial alineados a la derecha -->
-                <div class="d-flex align-items-center ms-auto">
-                    <a href="http://localhost/Taller-Web---Proyecto/php/login.php" class="btn btn-light me-3 d-flex align-items-center icon-btn">
-                        <i class="bi bi-person me-2"></i>
+                <div class="flex-grow-1 text-center">
+                    <a href="homepage.html" class="text-decoration-none">
+                        <h2 class="text-secondary fw-bold fs-1 m-0">Silver Heart's</h2>
                     </a>
-                    <a href="historial.html" class="btn btn-light d-flex align-items-center icon-btn">
-                        <i class="bi bi-clock me-2"></i>
+                </div>
+                <!-- Iconos de usuario e historial alineados a la derecha -->
+                <div class="d-flex align-items-center">
+                    <a href="http://localhost/Taller-Web---Proyecto/php/login.php" class="btn btn-outline-secondary me-3 d-flex align-items-center">
+                        <i class="bi bi-person me-2"></i> <span class="d-none d-md-inline fs-5">Login</span>
+                    </a>
+                    <a href="historial.html" class="btn btn-outline-secondary d-flex align-items-center">
+                        <i class="bi bi-clock me-2"></i> <span class="d-none d-md-inline fs-5">Historial</span>
                     </a>
                 </div>
             </div>
-    
-            <!-- Navegación centrada -->
-            <nav class="d-flex justify-content-center mt-3">
-                <a href="homepage.html" class="btn btn-light mx-2">Inicio</a>
-                <a href="anillos.html" class="btn btn-light mx-2">Anillos</a>
-                <a href="cadenas.html" class="btn btn-light mx-2">Cadenas</a>
-                <a href="pulseras.html" class="btn btn-light mx-2">Pulseras</a>
-                <a href="personalizado.html" class="btn btn-light mx-2">Personalizados</a>
-                <a href="contactanos.html" class="btn btn-light mx-2">Contáctanos</a>
-            </nav>
         </div>
+    
+        <!-- Navegación -->
+        <nav class="bg-light py-2">
+            <div class="container d-flex justify-content-center">
+                <a href="homepage.html" class="nav-link text-secondary mx-3 fs-5">Inicio</a>
+                <a href="anillos.html" class="nav-link text-secondary mx-3 fs-5">Anillos</a>
+                <a href="cadenas.html" class="nav-link text-secondary mx-3 fs-5">Cadenas</a>
+                <a href="pulseras.html" class="nav-link text-secondary mx-3 fs-5">Pulseras</a>
+                <a href="personalizado.html" class="nav-link text-secondary mx-3 fs-5">Personalizados</a>
+                <a href="contactanos.html" class="nav-link text-secondary mx-3 fs-5">Contáctanos</a>
+            </div>
+        </nav>
     </header>
     
-
     <!-- MAIN SECTION -->
     <section class="container my-5">
-        <div class="row align-items-center" >
+        <div class="row align-items-center">
             <!-- Texto descriptivo -->
             <div class="col-md-6 text-center text-md-start py-4">
-                <h2 class="fw-bold mb-4">Conecta con tu pareja a través de detalles únicos</h2>
-                <p class="mb-5">Pulseras y collares personalizados para momentos inolvidables</p>
+                <h2 class="fw-bold mb-4 text-secondary">Conecta con tu pareja a través de detalles únicos</h2>
+                <p class="mb-5 text-muted">Pulseras y collares personalizados para momentos inolvidables, creados con amor y dedicación.</p>
                 <div>
-                    <button class="btn btn-secondary mb-3 px-4 py-3">Descubre la colección</button>
-                    <button class="btn btn-outline-primary mx-3 mb-3 px-4 py-3">Personaliza ahora</button>
+                    <button class="btn btn-secondary text-white mb-3 px-4 py-2">Descubre la colección</button>
+                    <button class="btn btn-outline-secondary mx-3 mb-3 px-4 py-2">Personaliza ahora</button>
                 </div>
             </div>
-            <!-- Imagen alineada a la izquierda -->
-            <div class="col-md-6">
-                <img src="your-image-url" alt="Imagen de pulseras y collares" class="img-fluid" style="max-width: 100%; border: 1px solid #ddd;">
+            <!-- Imagen alineada a la derecha con tamaño reducido -->
+            <div class="col-md-6 text-center">
+                <img src="../images/probando.webp" 
+                     alt="Imagen de pulseras y collares" 
+                     class="img-fluid rounded shadow-sm w-75">
             </div>
         </div>
-    </section>    
+    </section>
+    
+
+   
     <!-- PRODUCT CATALOG -->
-    <div class="container-fluid my-5 bg-secondary rounded p-4">
-        <div class="bg-light p-5 rounded mx-auto" style="max-width: 900px;">
-            <h3 class="text-center font-weight-bold">Catálogo de Productos</h3>
-            <div class="row text-center mt-4">
-                <!-- Pulseras Personalizadas -->
-                <div class="col-md-4">
-                    <h4 class="font-weight-bold">Pulseras Personalizadas</h4>
-                    <p>Encuentra el diseño perfecto para ti y tu pareja.</p>
-                    <img src="your-image-url-1" alt="Pulseras Personalizadas" class="img-fluid" style="border: 1px solid #ccc; padding: 10px;">
+<div class="container-fluid my-5 bg-dark text-white py-5">
+    <div class="container">
+        <h3 class="text-center fw-bold text-secondary mb-5">Catálogo de Productos</h3>
+        <div class="row g-4">
+            <!-- Pulseras Personalizadas -->
+            <div class="col-md-4">
+                <div class="card bg-light text-dark border-0 shadow-sm">
+                    <img src="../images/anillosPersonalizables.webp" alt="Pulseras Personalizadas" class="card-img-top rounded">
+                    <div class="card-body text-center">
+                        <h4 class="fw-bold text-secondary">Anillos Personalizadas</h4>
+                        <p class="text-muted">Encuentra el diseño perfecto para ti y tu pareja.</p>
+                    </div>
                 </div>
-                <!-- Collares Únicos -->
-                <div class="col-md-4">
-                    <h4 class="font-weight-bold">Collares Únicos</h4>
-                    <p>Cada collar es una obra de arte, hecho a la medida.</p>
-                    <img src="your-image-url-2" alt="Collares Únicos" class="img-fluid" style="border: 1px solid #ccc; padding: 10px;">
+            </div>
+            <!-- Collares Únicos -->
+            <div class="col-md-4">
+                <div class="card bg-light text-dark border-0 shadow-sm">
+                    <img src="../images/collaresUnicos.webp" alt="Collares Únicos" class="card-img-top rounded">
+                    <div class="card-body text-center">
+                        <h4 class="fw-bold text-secondary">Collares Únicos</h4>
+                        <p class="text-muted">Cada collar es una obra de arte, hecho a la medida.</p>
+                    </div>
                 </div>
-                <!-- Accesorios Especiales -->
-                <div class="col-md-4">
-                    <h4 class="font-weight-bold">Accesorios Especiales</h4>
-                    <p>Cada collar es una obra de arte, hecho a la medida.</p>
-                    <img src="your-image-url-3" alt="Accesorios Especiales" class="img-fluid" style="border: 1px solid #ccc; padding: 10px;">
+            </div>
+            <!-- Accesorios Especiales -->
+            <div class="col-md-4">
+                <div class="card bg-light text-dark border-0 shadow-sm">
+                    <img src="../images/accesoriosEspeciales.webp" alt="Accesorios Especiales" class="card-img-top rounded">
+                    <div class="card-body text-center">
+                        <h4 class="fw-bold text-secondary">Accesorios Especiales</h4>
+                        <p class="text-muted">Detalles únicos para complementar tu estilo.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 
     <!-- DESIGN SECTION -->
     <div class="container my-5">
@@ -100,7 +121,7 @@
                 <div>
                     <h4>Elegancia Atemporal</h4>
                     <p>Nuestras joyas combinan diseños clásicos con toques modernos.</p>
-                    <img src="https://via.placeholder.com/150x150.png?text=Imagen+1" alt="Elegancia Atemporal" class="img-fluid">
+                    <img src="../images/eleganciaAtemporal.webp" alt="Elegancia Atemporal" class="img-fluid">
                 </div>
             </div>
 
@@ -112,7 +133,7 @@
                 <div>
                     <h4>Detalles Refinados</h4>
                     <p>Cada pieza está cuidadosamente elaborada con materiales de alta calidad.</p>
-                    <img src="https://via.placeholder.com/150x150.png?text=Imagen+2" alt="Detalles Refinados" class="img-fluid">
+                    <img src="../images/detallesRefinados.webp" alt="Detalles Refinados" class="img-fluid">
                 </div>
             </div>
 
@@ -124,7 +145,7 @@
                 <div>
                     <h4>Inspiración Romántica</h4>
                     <p>Nuestras creaciones reflejan el amor y la conexión entre parejas.</p>
-                    <img src="https://via.placeholder.com/150x150.png?text=Imagen+3" alt="Inspiración Romántica" class="img-fluid">
+                    <img src="../images/inspiracionRomantica.webp" alt="Inspiración Romántica" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -141,11 +162,12 @@
                 </div>
                 <!-- Imagen -->
                 <div class="col-md-6 text-center">
-                    <img src="https://via.placeholder.com/400x300.png?text=Grupo+de+personas+trabajando" alt="Grupo de personas trabajando" class="img-fluid rounded">
+                    <img src="../images/sobreNosotros.webp" alt="Grupo de personas trabajando" class="img-fluid rounded w-75">
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- FOOTER -->
     <footer class="bg-dark text-white py-4">
@@ -155,8 +177,8 @@
                 <div class="col-md-4 mb-3">
                     <h3>Silver Heart's</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">CONÓCENOS</a></li>
-                        <li><a href="#" class="text-white">CONTÁCTANOS</a></li>
+                        <li><a href="contactanos.html" class="text-white">CONÓCENOS</a></li>
+                        <li><a href="contactanos.html" class="text-white">CONTÁCTANOS</a></li>
                     </ul>
                 </div>
                 <!-- 2 COLUMNA -->
@@ -172,13 +194,16 @@
                     <h3>REDES SOCIALES</h3>
                     <ul class="list-unstyled">
                         <li class="d-flex align-items-center justify-content-center justify-content-md-start">
-                            <i class="bi bi-telephone-fill me-2"></i> +51 999999999
+                            <i class="bi bi-telephone-fill me-2"></i>
+                            <a href="https://wa.me/51999999999" target="_blank" class="text-white">+51 999999999</a>
                         </li>
                         <li class="d-flex align-items-center justify-content-center justify-content-md-start">
-                            <i class="bi bi-facebook me-2"></i> Facebook
+                            <i class="bi bi-facebook me-2"></i>
+                            <a href="https://www.facebook.com/tu-pagina" target="_blank" class="text-white">Facebook</a>
                         </li>
                         <li class="d-flex align-items-center justify-content-center justify-content-md-start">
-                            <i class="bi bi-instagram me-2"></i> Instagram
+                            <i class="bi bi-instagram me-2"></i>
+                            <a href="https://www.instagram.com/tu-usuario" target="_blank" class="text-white">Instagram</a>
                         </li>
                     </ul>
                 </div>
