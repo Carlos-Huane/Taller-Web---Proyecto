@@ -20,7 +20,7 @@
         echo '
             <script>
                 alert("El usuario ya se encuentra registrado, por favor ingrese otro usuario");
-                window.location.href="../login.php";
+                window.location.href="../php/login.php";
             </script>
         ';
         exit();
