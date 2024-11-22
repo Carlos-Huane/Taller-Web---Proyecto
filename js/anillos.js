@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Añade productos al carrito
     window.añadirAlCarrito = function (nombre, precio, talla, button) {
+        
         window.location.href = "../html/ventanaEmergente.html";
         const cantidad = parseInt(button.parentElement.querySelector('.cantidad').textContent);
 

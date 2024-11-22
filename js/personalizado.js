@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Añade productos personalizados al carrito
     window.añadirAlCarrito = function (nombre, precio, fecha, inputId, button) {
+        window.location.href = "../html/ventanaEmergente.html";
         const textoPersonalizado = document.getElementById(inputId).value;
         const cantidad = 1; // Puedes ajustar según sea necesario
 
