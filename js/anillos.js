@@ -11,6 +11,45 @@ const anillos = [
 
 let carrito = JSON.parse(sessionStorage.getItem('carrito')) || []; // Carga el carrito desde sessionStorage
 
+const cardsContainer = document.getElementById('cardsContainer');
+
+anillos.forEach((anillo, index) => {
+    const card = document.createElement('div');
+    card.className = 'col-md-4 mb-4';
+    card.innerHTML = `
+        <div class="card">
+            <img src="${anillo.imagen}" class="card-img-top" alt="${anillo.nombre}">
+            <div class="card-body">
+                <h5 class="card-title">${anillo.nombre}</h5>
+                <p class="card-text">Precio: $${anillo.precio}</p>
+                <button class="btn btn-primary" onclick="openModal(${index})">Comprar ahora</button>
+            </div>
+        </div>
+    `;
+    cardsContainer.appendChild(card);
+});
+
+function openModal(index) {
+    const anillo = anillos[index];
+    document.getElementById('modalName').innerText = anillo.nombre;
+    document.getElementById('modalPrice').innerText = `Precio: $${anillo.precio}`;
+    document.getElementById('modalTalla').innerText = `Talla: ${anillo.talla}`;
+    document.getElementById('modalImage').src = anillo.imagen;
+    document.getElementById('modalQuantity').innerText = 1; // Default quantity
+    const modal = new bootstrap.Modal(document.getElementById('purchaseModal'));
+    modal.show();
+}
+
+document.getElementById('confirmPurchaseButton').addEventListener('click', () => {
+    const address = document.getElementById('address').value;
+    if (address) {
+        alert('Compra confirmada. Enviando a: ' + address);
+        const modal = bootstrap.Modal.getInstance(document.getElementById('purchaseModal'));
+        modal.hide();
+    } else {
+        alert('Por favor, ingresa tu dirección de envío.');
+    }
+});
 document.addEventListener('DOMContentLoaded', function () {
     const cardsContainer = document.getElementById('cardsContainer');
 
@@ -36,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
 
                             <!-- Botón Añadir al carrito -->
-                            <button class="btn btn-primary mt-3" 
+                            <button class="btn btn-secondary mt-3"
                                 onclick="añadirAlCarrito('${anillo.nombre}', ${anillo.precio}, '${anillo.talla}', this)">
                                 <i class="bi bi-cart"></i> Comprar ahora
                             </button>
@@ -56,8 +95,10 @@ document.addEventListener('DOMContentLoaded', function () {
         cantidadElement.textContent = cantidad;
     };
 
-    // Añade productos al carrito
+    /*// Añade productos al carrito
     window.añadirAlCarrito = function (nombre, precio, talla, button) {
+        
+        window.location.href = "../html/ventanaEmergente.html";
         const cantidad = parseInt(button.parentElement.querySelector('.cantidad').textContent);
 
         // Verifica si ya existe en el carrito
@@ -71,7 +112,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         sessionStorage.setItem('carrito', JSON.stringify(carrito)); // Guarda el carrito en sessionStorage
         console.log(carrito); // Muestra el carrito en la consola
+    };*/
+    window.añadirAlCarrito = function (nombre, precio, talla, button) {
+        const cantidad = parseInt(button.parentElement.querySelector('.cantidad').textContent); // Obtener la cantidad
+        const index = anillos.findIndex(item => item.nombre === nombre); // Obtener el índice del producto
+    
+        openModal(index, cantidad); // Mostrar el modal con la información del producto
     };
+
 
     // Filtrado por fecha, precio o nombre
     const dropdownItems = document.querySelectorAll('.dropdown-item');

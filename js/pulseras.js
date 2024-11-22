@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
 
                             <!-- Botón Añadir al carrito -->
-                            <button class="btn btn-primary mt-3" 
-                                onclick="añadirAlCarrito('${pulsera.nombre}', ${pulsera.precio}, this)">
+                            <button class="btn btn-secondary mt-3"  
+                                onclick="openModal('${pulsera.nombre}', ${pulsera.precio}, this)">
                                 <i class="bi bi-cart"></i> Comprar ahora
                             </button>
                         </div>
@@ -44,6 +44,24 @@ document.addEventListener('DOMContentLoaded', function () {
             cardsContainer.innerHTML += card;
         });
     }
+    // Abre el modal con los detalles del producto
+    window.openModal = function (nombre, precio, button) {
+        // Actualiza el contenido del modal
+        document.getElementById('modalName').innerText = nombre; // Nombre del producto
+        document.getElementById('modalPrice').innerText = `Precio: S/${precio.toFixed(2)}`; // Precio
+        document.getElementById('modalDate').innerText = `Fecha: ${new Date().toLocaleDateString()}`; // Fecha actual (puedes cambiar esto según tu lógica)
+        document.getElementById('modalImage').src = "https://via.placeholder.com/150"; // Aquí puedes establecer una imagen predeterminada o cambiar la lógica para obtener la imagen real
+        document.getElementById('modalQuantity').innerText = 1; // Cantidad por defecto
+
+        // Mostrar el modal
+        $('#customModal').modal('show'); // Esto muestra el modal
+
+        // Añadir evento al botón de confirmar compra
+        document.getElementById('confirmPurchaseButton').onclick = function() {
+            alert("Compra de " + nombre + " realizada con éxito por un total de S/" + precio.toFixed(2));
+            $('#customModal').modal('hide'); // Cierra el modal después de confirmar
+        };
+    };
 
     // Cambia la cantidad seleccionada
     window.cambiarCantidad = function (button, cambio) {
@@ -55,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Añade productos al carrito
     window.añadirAlCarrito = function (nombre, precio, button) {
+        window.location.href = "../html/ventanaEmergente.html";
         const cantidad = parseInt(button.parentElement.querySelector('.cantidad').textContent);
 
         // Verifica si ya existe en el carrito

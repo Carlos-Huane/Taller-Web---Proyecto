@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal de Compra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Selecciona el modal por su ID
+            const modalElement = document.getElementById('purchaseModal');
+            // Crea una instancia del modal usando Bootstrap
+            const modal = new bootstrap.Modal(modalElement);
+            // Muestra el modal automáticamente
+            modal.show();
+        });
+    </script>
+    <style>
+        .image-preview {
+            height: 200px;
+            background-color: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px; /* Desplaza la imagen más abajo */
+        }
+        .discount-badge {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Botón para abrir el modal -->
+    <button class="btn btn-primary position-fixed top-50 start-50 translate-middle" data-bs-toggle="modal" data-bs-target="#purchaseModal">
+        <!-- Abrir Modal de Compra -->
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="purchaseModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content shadow">
+                <!-- Encabezado del Modal -->
+                <div class="modal-header bg-white">
+                    <h5 class="modal-title fw-bold">
+                        <i class="fas fa-shopping-cart me-2 text-primary"></i>
+                        Detalles de la Compra
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Cuerpo del Modal -->
+                <div class="modal-body p-4">
+                    <div class="container-fluid">
+                        <!-- Sección de Producto -->
+                        <div class="row g-4">
+                            <!-- Formulario -->
+                            <div class="col-md-8">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="productName" placeholder="Nombre">
+                                    <label for="productName">Nombre del producto</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="price" placeholder="Precio">
+                                    <label for="price">Precio ($)</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="quantity" placeholder="Cantidad">
+                                    <label for="quantity">Cantidad</label>
+                                </div>
+
+                                <div class="form-floating">
+                                    <input type="text" class="form-control bg-light" id="totalCost" placeholder="Total" readonly>
+                                    <label for="totalCost">Costo total</label>
+                                </div>
+                            </div>
+
+                            <!-- Imagen -->
+                            <div class="col-md-4">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="image-preview rounded">
+                                        <i class="fas fa-image fa-3x text-secondary mb-2"></i>
+                                        <p class="text-muted mb-0">Vista previa</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sección de Dirección -->
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Dirección" id="address" style="height: 100px"></textarea>
+                                <label for="address">Dirección de envío</label>
+                            </div>
+                        </div>
+
+                        <!-- Sección de Pago -->
+                        <div class="mt-4">
+                            <!-- Mensaje de descuento -->
+                            <div class="discount-badge p-3 rounded text-center mb-3">
+                                <i class="fas fa-tag me-2"></i>
+                                <span class="fw-bold text-warning">¡Obtén un 5% de descuento al pagar ahora!</span>
+                            </div>
+
+                            <!-- Botones de pago -->
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <button class="btn btn-secondary w-100 py-3" disabled>
+                                        <i class="fas fa-credit-card me-2"></i>
+                                        Pagar ahora
+                                    </button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-primary w-100 py-3">
+                                        <i class="fas fa-truck me-2"></i>
+                                        Pago contraentrega
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
