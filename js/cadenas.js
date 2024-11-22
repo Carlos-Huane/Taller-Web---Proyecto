@@ -1,10 +1,10 @@
 const cadenas = [
-    { nombre: "Cadena de Plata", precio: 29.99, fecha: "2024-10-12", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena de Oro", precio: 49.99, fecha: "2024-09-20", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena Personalizada", precio: 39.99, fecha: "2024-08-10", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena de Acero Inoxidable", precio: 24.99, fecha: "2024-10-05", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena con Colgante de Corazón", precio: 34.99, fecha: "2024-09-15", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena de perlas", precio: 59.99, fecha: "2024-08-01", imagen: "https://via.placeholder.com/150" },
+    { nombre: "Cadena de Plata", precio: 29.99, fecha: "2024-10-12", imagen: "../images/chain-image.jpg" },
+    { nombre: "Cadena de Oro", precio: 49.99, fecha: "2024-09-20", imagen: "../images/chain-image.jpg" },
+    { nombre: "Cadena Personalizada", precio: 39.99, fecha: "2024-08-10", imagen: "../images/chain-image.jpg" },
+    { nombre: "Cadena de Acero Inoxidable", precio: 24.99, fecha: "2024-10-05", imagen: "../images/chain-image.jpg" },
+    { nombre: "Cadena con Colgante de Corazón", precio: 34.99, fecha: "2024-09-15", imagen: "../images/chain-image.jpg" },
+    { nombre: "Cadena de perlas", precio: 59.99, fecha: "2024-08-01", imagen: "../images/chain-image.jpg" },
 ];
 
 let carrito = JSON.parse(sessionStorage.getItem('carrito')) || []; // Carga el carrito desde sessionStorage
