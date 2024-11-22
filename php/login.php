@@ -30,8 +30,8 @@
                 <!--login-->
                 <form action="" class="formulario__login">
                     <h2>Iniciar sesión</h2>
-                    <input type="text" placeholder="Correo electrónico">
-                    <input type="password" placeholder="Contraseña">
+                    <input type="text" placeholder="Correo electrónico" name="correo">
+                    <input type="password" placeholder="Contraseña" name ="contrasena">
                     <button>Entrar</button>
                 </form>
                 <!--registro por método Post para que los datos en la url no se muestren-->
