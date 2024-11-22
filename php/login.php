@@ -28,7 +28,7 @@
             <!--Formulario de login y registro-->
             <div class="contenedor__login-register">
                 <!--login-->
-                <form action="" class="formulario__login">
+                <form action="php/login_usuario_be.php" method= "POST" class="formulario__login">
                     <h2>Iniciar sesión</h2>
                     <input type="text" placeholder="Correo electrónico" name="correo">
                     <input type="password" placeholder="Contraseña" name ="contrasena">

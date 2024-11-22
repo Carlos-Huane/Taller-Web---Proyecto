@@ -1,4 +1,7 @@
 <?php
+    //
+    session_start(); //inicializar la sesion
+
     include 'conexion_be.php';
 
     $correo = $_POST['correo'];
@@ -9,6 +12,7 @@
 
     //Reedirigir a la página de inicio
     if(mysqli_num_rows($validar_login) > 0){
+        $_SESSION['usuario'] = $correo;
         header("location: ../html/homepage.html");
     }else{
         echo '
