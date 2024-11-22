@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <!-- Input de texto personalizado -->
                             <input type="text" class="form-control mb-2" placeholder="Ingrese el texto personalizado" id="inputPersonalizado-${item.nombre}">
                             
-                            <button class="btn btn-primary mt-3" 
+                            <button class="btn btn-secondary mt-3" 
                                 onclick="añadirAlCarrito('${item.nombre}', ${item.precio}, '${item.fecha}', 'inputPersonalizado-${item.nombre}', this)">
                                 <i class="bi bi-cart"></i> Comprar ahora
                             </button>
