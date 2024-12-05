@@ -28,7 +28,6 @@
     mysqli_close($conexion); // Cerrar la conexión a la base de datos
 ?>
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -73,9 +72,8 @@
                                     <img src="../images/ring-image.jpg" class="img-fluid" alt="Anillos">
                                 </div>
                                 <div class="col-md-3 d-flex flex-column align-items-end">
-                                    <button class="btn btn-danger btn-sm mb-2">Eliminar</button>
-                                    <button class="btn btn-warning btn-sm mb-2">Actualizar</button>
-                                    <button class="btn btn-info btn-sm">Modificar</button>
+                                    <!-- Botón Agregar -->
+                                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#addProductModal">Agregar</button>
                                 </div>
                             </div>
                         </div>
@@ -135,9 +133,51 @@
         <footer class="text-center mt-4">
             <p>© 2024 Silver heart's. Todos los derechos reservados.</p>
         </footer>
+        <!-- Modal de Agregar Producto -->
+        <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addProductModalLabel">Agregar Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addProductForm" action="../php/agregar_producto.php" method="POST">
+                            <div class="mb-3">
+                                <label for="addProductName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="addProductName" name="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="addProductPrice" class="form-label">Precio</label>
+                                <input type="number" class="form-control" id="addProductPrice" name="precio" required step="0.01">
+                            </div>
+                            <div class="mb-3">
+                                <label for="addProductTalla" class="form-label">Talla</label>
+                                <input type="text" class="form-control" id="addProductTalla" name="talla" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="addProductImage" class="form-label">URL de Imagen</label>
+                                <input type="text" class="form-control" id="addProductImage" name="imagen" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="addProductCategory" class="form-label">Categoría</label>
+                                <select class="form-select" id="addProductCategory" name="categoria" required>
+                                    <option value="anillos">Anillos</option>
+                                    <option value="cadenas">Cadenas</option>
+                                    <option value="personalizado">Personalizado</option>
+                                    <option value="pulseras">Pulseras</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/admin.js"></script> 
+    <script src="../js/admin.js"></script>
+    <script src="../agregar_producto.php"> 
 </body>
 </html>
