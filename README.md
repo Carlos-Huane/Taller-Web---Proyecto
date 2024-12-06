@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/512717ca-5e03-4fac-8652-e9c81d1a6c5f)# Proyecto Web - Silver Heart's
+# Proyecto Web - Silver Heart's
 
 ## Descripción
 Silver Heart's es un proyecto de programación web básico que ofrece una plataforma para la venta de joyas personalizadas, incluyendo anillos, pulseras y cadenas. El objetivo de este proyecto es proporcionar una experiencia de usuario intuitiva y atractiva, permitiendo a los usuarios personalizar y comprar productos de joyería en línea.
