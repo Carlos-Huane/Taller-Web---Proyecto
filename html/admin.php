@@ -1,31 +1,61 @@
 <?php
-    session_start(); // Iniciar la sesión
+session_start(); // Iniciar la sesión
 
-    // Verificar si el usuario ha iniciado sesión
-    if (!isset($_SESSION['usuario'])) {
-        header("location: login.php"); // Redirigir a la página de login si no está autenticado
-        exit();
-    }
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['usuario'])) {
+    header("location: login.php"); // Redirigir a la página de login si no está autenticado
+    exit();
+}
 
-    // Incluir el archivo de conexión a la base de datos
-    include '../php/conexion_backend.php';
+// Incluir el archivo de conexión a la base de datos
+include '../php/conexion_backend.php';
 
-    // Obtener el correo del usuario desde la sesión
-    $correo = $_SESSION['usuario'];
+// Obtener el correo del usuario desde la sesión
+$correo = $_SESSION['usuario'];
 
-    // Consultar los datos del usuario en la base de datos
-    $query = "SELECT nombre_completo, correo FROM usuarios WHERE correo = '$correo'";
-    $result = mysqli_query($conexion, $query);
+// Consultar los datos del usuario en la base de datos
+$query = "SELECT nombre_completo, correo FROM usuarios WHERE correo = '$correo'";
+$result = mysqli_query($conexion, $query);
 
-    // Verificar si se encontró el usuario
-    if (mysqli_num_rows($result) > 0) {
-        $usuario = mysqli_fetch_assoc($result); // Obtener los datos del usuario
-    } else {
-        echo "No se encontraron datos del usuario.";
-        exit();
-    }
+// Verificar si se encontró el usuario
+if (mysqli_num_rows($result) > 0) {
+    $usuario = mysqli_fetch_assoc($result); // Obtener los datos del usuario
+} else {
+    echo "No se encontraron datos del usuario.";
+    exit();
+}
 
-    mysqli_close($conexion); // Cerrar la conexión a la base de datos
+mysqli_close($conexion); // Cerrar la conexión a la base de datos
+
+// Productos de los archivos de JavaScript
+$anillos = json_encode([
+    ["nombre" => "Anillo con corazón grabado", "precio" => 35.00],
+    ["nombre" => "Anillo de oro clásico", "precio" => 150.00],
+    ["nombre" => "Anillo de plata con piedras", "precio" => 80.00],
+    ["nombre" => "Anillo minimalista", "precio" => 45.00],
+    ["nombre" => "Anillo doble banda", "precio" => 120.00],
+    ["nombre" => "Anillo personalizado", "precio" => 90.00],
+    ["nombre" => "Anillo vintage", "precio" => 75.00],
+    ["nombre" => "Anillo romántico", "precio" => 60.00],
+]);
+
+$cadenas = json_encode([
+    ["nombre" => "Cadena de Plata", "precio" => 29.99],
+    ["nombre" => "Cadena de Oro", "precio" => 49.99],
+    ["nombre" => "Cadena Personalizada", "precio" => 39.99],
+    ["nombre" => "Cadena de Acero Inoxidable", "precio" => 24.99],
+    ["nombre" => "Cadena con Colgante de Corazón", "precio" => 34.99],
+    ["nombre" => "Cadena de perlas", "precio" => 59.99],
+]);
+
+$pulseras = json_encode([
+    ["nombre" => "Pulsera de Cuero", "precio" => 24.99],
+    ["nombre" => "Pulsera de Plata", "precio" => 34.99],
+    ["nombre" => "Pulsera Personalizada", "precio" => 44.99],
+    ["nombre" => "Pulsera de Beads", "precio" => 19.99],
+    ["nombre" => "Pulsera con Charm", "precio" => 29.99],
+    ["nombre" => "Pulsera de Acero Inoxidable", "precio" => 39.99],
+]);
 ?>
 
 <!DOCTYPE html>
@@ -41,136 +71,91 @@
 
     <div class="container-fluid">
         <header class="text-center p-3 bg-secondary text-white">
-            <h1>Silver heart's - Administrador</h1>
+            <h1>Silver Heart's - Administrador</h1>
         </header>
 
         <div class="row justify-content-center mt-4">
             <div class="col-lg-3 col-md-4 col-sm-6 d-flex flex-column justify-content-center align-items-center">
                 <div class="profile">
-                    <!-- Imagenes que se mostrarán según el tamaño de pantalla profile d-flex flex-column justify-content-center align-items-center-->
-                    <!-- Para pantallas grandes (mayores a 940px) -->
-                    <img src="" class="img-fluid rounded-circle d-none d-lg-block " alt="Imagen de Chris calato" width="300">
-                    
-                    <!-- Para pantallas medianas (entre 940px y 780px) -->
-                    <img src="" class="img-fluid rounded-circle d-none d-md-block d-lg-none" alt="Imagen de Chris calato" width="150">
-                    
-                    <!-- Para pantallas pequeñas (menores a 780px) -->
-                    <img src="" class="img-fluid rounded-circle d-block d-md-none" alt="Imagen de Chris calato" width="150">
-
                     <h2>Administrador Christopher</h2>
                 </div>
             </div>
             
             <div class="col-lg-6 col-md-8 col-sm-12">
                 <div class="inventory-section">
-                    <h3 class="text-center">Gestión de inventario</h3>
-                    <div class="row inventory-item mb-3">
-                        <div class="row inventory-item mb-3">
-                            <div class="row inventory-item mb-3 align-items-center">
-                                <div class="col-md-6 d-flex justify-content-center">Anillos</div>
-                                <div class="col-md-3">
-                                    <img src="../images/ring-image.jpg" class="img-fluid" alt="Anillos">
+                    <h3 class=" text-center">Gestión de inventario</h3>
+                    <div class="text-center mb-4">
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addProductModal">Agregar Producto</button>
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProductModal">Eliminar Producto</button>
+                    </div>
+
+                    <!-- Modal de Agregar Producto -->
+                    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addProductModalLabel">Agregar Producto</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="col-md-3 d-flex flex-column align-items-end">
-                                    <!-- Botón Agregar -->
-                                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#addProductModal">Agregar</button>
+                                <div class="modal-body">
+                                    <form id="addProductForm" action="../php/agregar_producto.php" method="POST">
+                                        <div class="mb-3">
+                                            <label for="addProductName" class="form-label">Nombre</label>
+                                            <input type="text" class="form-control" id="addProductName" name="nombre" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="addProductPrice" class="form-label">Precio</label>
+                                            <input type="number" class="form-control" id="addProductPrice" name="precio" required step="0.01">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="addProductTalla" class="form-label">Talla</label>
+                                            <input type="text" class="form-control" id="addProductTalla" name="talla" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="addProductImage" class="form-label">URL de Imagen</label>
+                                            <input type="text" class="form-control" id="addProductImage" name="imagen" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="addProductCategory" class="form-label">Categoría</label>
+                                            <select class="form-select" id="addProductCategory" name="categoria" required>
+                                                <option value="" disabled selected>Selecciona una categoría</option>
+                                                <option value="ropa">Ropa</option ```php
+                                                <option value="accesorios">Accesorios</option>
+                                                <option value="calzado">Calzado</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Agregar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row inventory-item mb-3">
-                        <div class="row inventory-item mb-3">
-                            <div class="row inventory-item mb-3 align-items-center">
-                                <div class="col-md-6 d-flex justify-content-center">Pulseras</div>
-                                <div class="col-md-3">
-                                    <img src="../images/bracelet-img.jpg" class="img-fluid" alt="Pulseras">
+                    <!-- Modal de Eliminar Producto -->
+                    <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteProductModalLabel">Eliminar Producto</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="col-md-3 d-flex flex-column align-items-end">
-                                    <button class="btn btn-danger btn-sm mb-2">Eliminar</button>
-                                    <button class="btn btn-warning btn-sm mb-2">Actualizar</button>
-                                    <button class="btn btn-info btn-sm">Modificar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row inventory-item mb-3">
-                        <div class="row inventory-item mb-3">
-                            <div class="row inventory-item mb-3 align-items-center">
-                                <div class="col-md-6 d-flex justify-content-center">Cadenas</div>
-                                <div class="col-md-3">
-                                    <img src="../images/chain-image.jpg" class="img-fluid" alt="Cadenas">
-                                </div>
-                                <div class="col-md-3 d-flex flex-column align-items-end">
-                                    <button class="btn btn-danger btn-sm mb-2">Eliminar</button>
-                                    <button class="btn btn-warning btn-sm mb-2">Actualizar</button>
-                                    <button class="btn btn-info btn-sm">Modificar</button>
+                                <div class="modal-body">
+                                    <h6>Lista de Productos</h6>
+                                    <ul class="list-group" id="productList">
+                                        <?php
+                                        // Decodificar los arreglos de productos y mostrarlos en la lista
+                                        $productos = array_merge(json_decode($anillos, true), json_decode($cadenas, true), json_decode($pulseras, true));
+                                        foreach ($productos as $producto) {
+                                            echo "<li class='list-group-item'>{$producto['nombre']} - \${$producto['precio']}</li>";
+                                        }
+                                        ?>
+                                    </ul>
+                                    <p class="mt-3">Selecciona un producto para eliminar.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row inventory-item mb-3">
-                        <div class="row inventory-item mb-3">
-                            <div class="row inventory-item mb-3 align-items-center">
-                                <div class="col-md-6 d-flex justify-content-center">Personalizados</div>
-                                <div class="col-md-3">
-                                    <img src="../images/custom-image.jpg" class="img-fluid" alt="Personalizados">
-                                </div>
-                                <div class="col-md-3 d-flex flex-column align-items-end">
-                                    <button class="btn btn-danger btn-sm mb-2">Eliminar</button>
-                                    <button class="btn btn-warning btn-sm mb-2">Actualizar</button>
-                                    <button class="btn btn-info btn-sm">Modificar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="text-center mt-4">
-            <p>© 2024 Silver heart's. Todos los derechos reservados.</p>
-        </footer>
-        <!-- Modal de Agregar Producto -->
-        <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addProductModalLabel">Agregar Producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="addProductForm" action="../php/agregar_producto.php" method="POST">
-                            <div class="mb-3">
-                                <label for="addProductName" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="addProductName" name="nombre" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="addProductPrice" class="form-label">Precio</label>
-                                <input type="number" class="form-control" id="addProductPrice" name="precio" required step="0.01">
-                            </div>
-                            <div class="mb-3">
-                                <label for="addProductTalla" class="form-label">Talla</label>
-                                <input type="text" class="form-control" id="addProductTalla" name="talla" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="addProductImage" class="form-label">URL de Imagen</label>
-                                <input type="text" class="form-control" id="addProductImage" name="imagen" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="addProductCategory" class="form-label">Categoría</label>
-                                <select class="form-select" id="addProductCategory" name="categoria" required>
-                                    <option value="anillos">Anillos</option>
-                                    <option value="cadenas">Cadenas</option>
-                                    <option value="personalizado">Personalizado</option>
-                                    <option value="pulseras">Pulseras</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Agregar</button>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
