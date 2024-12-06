@@ -21,7 +21,7 @@ Esta página web es de naturaleza estática, lo que significa que su contenido n
 
 ## Instalación
 Para ejecutar este proyecto en tu máquina local, sigue estos pasos:
-1. Descarga el repositorio
+1. Descarga el repositorio de la rama Frontend
 2. Navega al directorio del proyecto:
 3. Asegúrate de tener instalado XAMPP para poder importar la base de datos.
 4. Copia la carpeta del proyecto en el directorio `htdocs` de XAMPP.
