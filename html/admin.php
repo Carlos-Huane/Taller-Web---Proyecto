@@ -77,7 +77,7 @@ $pulseras = json_encode([
         <div class="row justify-content-center mt-4">
             <div class="col-lg-3 col-md-4 col-sm-6 d-flex flex-column justify-content-center align-items-center">
                 <div class="profile">
-                    <h2>Administrador Christopher</h2>
+                    <h2>Administrador</h2>
                 </div>
             </div>
             
