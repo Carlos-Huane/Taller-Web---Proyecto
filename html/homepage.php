@@ -65,8 +65,8 @@
                 <h2 class="fw-bold mb-4 text-secondary">Conecta con tu pareja a través de detalles únicos</h2>
                 <p class="mb-5 text-muted">Pulseras y collares personalizados para momentos inolvidables, creados con amor y dedicación.</p>
                 <div>
-                    <button class="btn btn-secondary text-white mb-3 px-4 py-2">Descubre la colección</button>
-                    <button class="btn btn-outline-secondary mx-3 mb-3 px-4 py-2">Personaliza ahora</button>
+                    <button class="btn btn-secondary text-white mb-3 px-4 py-2" ><a href="#sobreNosotros" style="color: white; text-decoration: none;">Descubre la colección</a></button>
+                    <button class="btn btn-outline-secondary mx-3 mb-3 px-4 py-2"><a href="./personalizado.php" style="color: gray; text-decoration: none;">Personaliza ahora</a></button>
                 </div>
             </div>
             <!-- Imagen alineada a la derecha con tamaño reducido -->
@@ -163,7 +163,7 @@
     </div>
 
     <!-- ABOUT US -->
-    <section class="about-us bg-light py-5">
+    <section class="about-us bg-light py-5" id="sobreNosotros">
         <div class="container">
             <h2 class="text-center mb-4">Sobre Nosotros</h2>
             <div class="row align-items-center">
@@ -188,7 +188,7 @@
                 <div class="col-md-4 mb-3">
                     <h3>Silver Heart's</h3>
                     <ul class="list-unstyled">
-                        <li><a href="contactanos.php" class="text-white">CONÓCENOS</a></li>
+                        <li><a href="#sobreNosotros" class="text-white">CONÓCENOS</a></li>
                         <li><a href="contactanos.php" class="text-white">CONTÁCTANOS</a></li>
                     </ul>
                 </div>

@@ -1,12 +1,12 @@
 const personalizados = [
-    { nombre: "Anillo con grabado personalizado", precio: 40.00, fecha: "2024-09-01", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Pulsera grabada", precio: 50.00, fecha: "2024-09-20", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena personalizada", precio: 100.00, fecha: "2024-08-10", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Anillo doble personalizado", precio: 60.00, fecha: "2024-10-05", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Pulsera con iniciales grabadas", precio: 45.00, fecha: "2024-09-25", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena con nombre grabado", precio: 120.00, fecha: "2024-08-15", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Anillo con fecha especial", precio: 55.00, fecha: "2024-09-12", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Pulsera con grabado de amor", precio: 70.00, fecha: "2024-09-30", imagen: "https://via.placeholder.com/150" }
+    { nombre: "Anillo con grabado personalizado", precio: 40.00, fecha: "2024-09-01", imagen: "../images/custom-image.jpg" },
+    { nombre: "Pulsera grabada", precio: 50.00, fecha: "2024-09-20", imagen: "../images/custom-image.jpg"},
+    { nombre: "Cadena personalizada", precio: 100.00, fecha: "2024-08-10", imagen: "../images/custom-image.jpg" },
+    { nombre: "Anillo doble personalizado", precio: 60.00, fecha: "2024-10-05", imagen: "../images/custom-image.jpg" },
+    { nombre: "Pulsera con iniciales grabadas", precio: 45.00, fecha: "2024-09-25", imagen: "../images/custom-image.jpg" },
+    { nombre: "Cadena con nombre grabado", precio: 120.00, fecha: "2024-08-15", imagen: "../images/custom-image.jpg" },
+    { nombre: "Anillo con fecha especial", precio: 55.00, fecha: "2024-09-12", imagen: "../images/custom-image.jpg" },
+    { nombre: "Pulsera con grabado de amor", precio: 70.00, fecha: "2024-09-30", imagen: "../images/custom-image.jpg" }
 ];
 
 let carrito = JSON.parse(sessionStorage.getItem('carrito')) || []; 

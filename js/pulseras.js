@@ -1,10 +1,10 @@
 const pulseras = [
-    { nombre: "Pulsera de Cuero", precio: 24.99, fecha: "2024-10-12", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Pulsera de Plata", precio: 34.99, fecha: "2024-09-20", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Pulsera Personalizada", precio: 44.99, fecha: "2024-08-10", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Pulsera de Beads", precio: 19.99, fecha: "2024-10-05", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Pulsera con Charm", precio: 29.99, fecha: "2024-09-15", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Pulsera de Acero Inoxidable", precio: 39.99, fecha: "2024-08-01", imagen: "https://via.placeholder.com/150" },
+    { nombre: "Pulsera de Cuero", precio: 24.99, fecha: "2024-10-12", imagen: "../images/bracelet-img.jpg"},
+    { nombre: "Pulsera de Plata", precio: 34.99, fecha: "2024-09-20", imagen: "../images/bracelet-img.jpg" },
+    { nombre: "Pulsera Personalizada", precio: 44.99, fecha: "2024-08-10", imagen: "../images/bracelet-img.jpg" },
+    { nombre: "Pulsera de Beads", precio: 19.99, fecha: "2024-10-05", imagen: "../images/bracelet-img.jpg" },
+    { nombre: "Pulsera con Charm", precio: 29.99, fecha: "2024-09-15", imagen: "../images/bracelet-img.jpg" },
+    { nombre: "Pulsera de Acero Inoxidable", precio: 39.99, fecha: "2024-08-01", imagen: "../images/bracelet-img.jpg" },
 ];
 
 let carrito = JSON.parse(sessionStorage.getItem('carrito')) || []; // Carga el carrito desde sessionStorage

@@ -156,6 +156,34 @@
             // Aquí puedes agregar lógica para enviar los datos del formulario si es necesario
         });
     </script>
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que se recargue la página
+
+        // Obtener los valores del formulario
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+
+        // Crear el contenido del correo
+        const subject = `Contacto de ${name}`;
+        const body = `
+            Nombre: ${name}
+            Correo Electrónico: ${email}
+            Teléfono: ${phone}
+            
+            Mensaje:
+            ${message}
+        `;
+
+        // Generar el enlace mailto
+        const mailtoLink = `mailto:silverhearts@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Abrir Gmail con el enlace generado
+        window.location.href = mailtoLink;
+    });
+</script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

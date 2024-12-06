@@ -79,11 +79,46 @@
         </main>
 
         <!-- FOOTER -->
-        <footer class="bg-secondary text-white text-center py-4">
-            <div class="container">
-                <p class="mb-0">© 2024 Silver Heart's. Todos los derechos reservados.</p>
+        <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- 1 COLUMNA -->
+                <div class="col-md-4 mb-3">
+                    <h3>Silver Heart's</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="contactanos.php" class="text-white">CONÓCENOS</a></li>
+                        <li><a href="contactanos.php" class="text-white">CONTÁCTANOS</a></li>
+                    </ul>
+                </div>
+                <!-- 2 COLUMNA -->
+                <div class="col-md-4 mb-3">
+                    <h3>ENLACES</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">POLÍTICAS DE ENVÍO</a></li>
+                        <li><a href="#" class="text-white">CAMBIOS Y DEVOLUCIONES</a></li>
+                    </ul>
+                </div>
+                <!-- 3 COLUMNA -->
+                <div class="col-md-4 mb-3">
+                    <h3>REDES SOCIALES</h3>
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
+                            <i class="bi bi-telephone-fill me-2"></i>
+                            <a href="https://wa.me/51999999999" target="_blank" class="text-white">+51 999999999</a>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
+                            <i class="bi bi-facebook me-2"></i>
+                            <a href="https://www.facebook.com/tu-pagina" target="_blank" class="text-white">Facebook</a>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
+                            <i class="bi bi-instagram me-2"></i>
+                            <a href="https://www.instagram.com/tu-usuario" target="_blank" class="text-white">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </footer>
+        </div>
+    </footer>
         <!-- Modal -->
         <div class="modal fade" id="customModal" tabindex="-1" aria-labelledby="customModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
