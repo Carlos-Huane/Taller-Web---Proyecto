@@ -1,4 +1,4 @@
-# Proyecto Web - Silver Heart's
+![image](https://github.com/user-attachments/assets/512717ca-5e03-4fac-8652-e9c81d1a6c5f)# Proyecto Web - Silver Heart's
 
 ## Descripción
 Silver Heart's es un proyecto de programación web básico que ofrece una plataforma para la venta de joyas personalizadas, incluyendo anillos, pulseras y cadenas. El objetivo de este proyecto es proporcionar una experiencia de usuario intuitiva y atractiva, permitiendo a los usuarios personalizar y comprar productos de joyería en línea.
@@ -31,7 +31,7 @@ Para ejecutar este proyecto en tu máquina local, sigue estos pasos:
 
 ## Uso
 - Regístrate como nuevo usuario o inicia sesión si ya tienes una cuenta.
-- El correo y contraseña del administrador son: "erickquinones@gmail.com" "1234", esto puede ser cambiado desde el archivo Taller-Web--Proyecto/php/login_admin_backend.php colocando un correo y contraseña que deben registrar desde la página web o directamente desde la base de datos. 
+- El correo y contraseña del administrador son: "adminisitrador@gmail.com" "1234", esto puede ser cambiado desde el archivo Taller-Web--Proyecto/php/login_admin_backend.php colocando un correo y contraseña que deben registrar desde la página web o directamente desde la base de datos. 
 - Las funcionalidades del administrador 
 - Explora las diferentes categorías de productos.
 - Personaliza los productos según tus preferencias con tu IDE de tu preferencia.
