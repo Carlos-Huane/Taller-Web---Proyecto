@@ -10,7 +10,7 @@
     $contrasena = hash('sha512', $contrasena); // Encriptar la contraseña
     
     // Verificar credenciales predefinidas
-    if ($correo === 'erickquinones@gmail.com' && $contrasena === hash('sha512', '1234')) {
+    if ($correo === 'adminisitrador@gmail.com' && $contrasena === hash('sha512', '1234')) {
         $_SESSION['usuario'] = $correo; // Guardar el correo en la sesión
         header("location: ../html/admin.php"); // Redirigir a la página admin.php
         exit;
