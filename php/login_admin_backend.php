@@ -18,7 +18,7 @@ if (mysqli_num_rows($validar_login) > 0) {
     header("location: ../html/homepage.php"); // Redirigir a la página de inicio
 } else {
     // Verificar credenciales predefinidas
-    if ($correo === 'administrador@gmail.com' && $contrasena === hash('sha512', '1234')) {
+    if ($correo === 'adminisitrador@gmail.com' && $contrasena === hash('sha512', '1234')) {
         $_SESSION['usuario'] = $correo; // Guardar el correo en la sesión
         header("location: ../html/homepage.php"); // Redirigir a la página de inicio
     } else {
