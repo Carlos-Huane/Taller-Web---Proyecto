@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $isLoggedIn = isset($_SESSION['usuario']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,18 +22,24 @@
             <div class="d-flex justify-content-between align-items-center">
                 <!-- Título centrado -->
                 <div class="flex-grow-1 text-center">
-                    <a href="homepage.html" class="text-decoration-none">
+                    <a href="homepage.php" class="text-decoration-none">
                         <h2 class="text-secondary fw-bold fs-1 m-0">Silver Heart's</h2>
                     </a>
                 </div>
-                <!-- Iconos de usuario e historial alineados a la derecha -->
+                <!-- Iconos de usuario y login -->
                 <div class="d-flex align-items-center">
-                    <a href="http://localhost/Taller-Web---Proyecto/php/login.php" class="btn btn-outline-secondary me-3 d-flex align-items-center">
-                        <i class="bi bi-person me-2"></i> <span class="d-none d-md-inline fs-5">Login</span>
-                    </a>
-                    <a href="historial.html" class="btn btn-outline-secondary d-flex align-items-center">
-                        <i class="bi bi-clock me-2"></i> <span class="d-none d-md-inline fs-5">Historial</span>
-                    </a>
+                    <?php if ($isLoggedIn): ?>
+                        <a href="usuario.php" class="btn btn-outline-secondary me-3 d-flex align-items-center">
+                            <i class="bi bi-person me-2"></i> Usuario
+                        </a>
+                        <a href="../php/cerrar_sesion.php" class="btn btn-outline-secondary d-flex align-items-center">
+                            <i class="bi bi-box-arrow-right me-2"></i> Cerrar sesión
+                        </a>
+                    <?php else: ?>
+                        <a href="login.php" class="btn btn-outline-secondary me-3 d-flex align-items-center">
+                            <i class="bi bi-person me-2"></i> Login
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -36,12 +47,12 @@
         <!-- Navegación -->
         <nav class="bg-light py-2">
             <div class="container d-flex justify-content-center">
-                <a href="homepage.html" class="nav-link text-secondary mx-3 fs-5">Inicio</a>
-                <a href="anillos.html" class="nav-link text-secondary mx-3 fs-5">Anillos</a>
-                <a href="cadenas.html" class="nav-link text-secondary mx-3 fs-5">Cadenas</a>
-                <a href="pulseras.html" class="nav-link text-secondary mx-3 fs-5">Pulseras</a>
-                <a href="personalizado.html" class="nav-link text-secondary mx-3 fs-5">Personalizados</a>
-                <a href="contactanos.html" class="nav-link text-secondary mx-3 fs-5">Contáctanos</a>
+                <a href="homepage.php" class="nav-link text-secondary mx-3 fs-5">Inicio</a>
+                <a href="anillos.php" class="nav-link text-secondary mx-3 fs-5">Anillos</a>
+                <a href="cadenas.php" class="nav-link text-secondary mx-3 fs-5">Cadenas</a>
+                <a href="pulseras.php" class="nav-link text-secondary mx-3 fs-5">Pulseras</a>
+                <a href="personalizado.php" class="nav-link text-secondary mx-3 fs-5">Personalizados</a>
+                <a href="contactanos.php" class="nav-link text-secondary mx-3 fs-5">Contáctanos</a>
             </div>
         </nav>
     </header>
@@ -54,8 +65,8 @@
                 <h2 class="fw-bold mb-4 text-secondary">Conecta con tu pareja a través de detalles únicos</h2>
                 <p class="mb-5 text-muted">Pulseras y collares personalizados para momentos inolvidables, creados con amor y dedicación.</p>
                 <div>
-                    <button class="btn btn-secondary text-white mb-3 px-4 py-2">Descubre la colección</button>
-                    <button class="btn btn-outline-secondary mx-3 mb-3 px-4 py-2">Personaliza ahora</button>
+                    <button class="btn btn-secondary text-white mb-3 px-4 py-2" ><a href="#sobreNosotros" style="color: white; text-decoration: none;">Descubre la colección</a></button>
+                    <button class="btn btn-outline-secondary mx-3 mb-3 px-4 py-2"><a href="./personalizado.php" style="color: gray; text-decoration: none;">Personaliza ahora</a></button>
                 </div>
             </div>
             <!-- Imagen alineada a la derecha con tamaño reducido -->
@@ -152,7 +163,7 @@
     </div>
 
     <!-- ABOUT US -->
-    <section class="about-us bg-light py-5">
+    <section class="about-us bg-light py-5" id="sobreNosotros">
         <div class="container">
             <h2 class="text-center mb-4">Sobre Nosotros</h2>
             <div class="row align-items-center">
@@ -177,8 +188,8 @@
                 <div class="col-md-4 mb-3">
                     <h3>Silver Heart's</h3>
                     <ul class="list-unstyled">
-                        <li><a href="contactanos.html" class="text-white">CONÓCENOS</a></li>
-                        <li><a href="contactanos.html" class="text-white">CONTÁCTANOS</a></li>
+                        <li><a href="#sobreNosotros" class="text-white">CONÓCENOS</a></li>
+                        <li><a href="contactanos.php" class="text-white">CONTÁCTANOS</a></li>
                     </ul>
                 </div>
                 <!-- 2 COLUMNA -->

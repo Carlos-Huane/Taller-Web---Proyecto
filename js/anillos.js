@@ -1,16 +1,55 @@
 const anillos = [
-    { nombre: "Anillo con corazón grabado", precio: 35.00, talla: "S", fecha: "2024-10-12", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Anillo de oro clásico", precio: 150.00, talla: "M", fecha: "2024-09-20", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Anillo de plata con piedras", precio: 80.00, talla: "L", fecha: "2024-08-10", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Anillo minimalista", precio: 45.00, talla: "S", fecha: "2024-10-01", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Anillo doble banda", precio: 120.00, talla: "M", fecha: "2024-09-15", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Anillo personalizado", precio: 90.00, talla: "L", fecha: "2024-08-20", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Anillo vintage", precio: 75.00, talla: "S", fecha: "2024-10-10", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Anillo romántico", precio: 60.00, talla: "M", fecha: "2024-07-05", imagen: "https://via.placeholder.com/150" },
+    { nombre: "Anillo con corazón grabado", precio: 35.00, talla: "S", fecha: "2024-10-12", imagen: "../images/ring-image.jpg" },
+    { nombre: "Anillo de oro clásico", precio: 150.00, talla: "M", fecha: "2024-09-20", imagen: "../images/ring-image.jpg" },
+    { nombre: "Anillo de plata con piedras", precio: 80.00, talla: "L", fecha: "2024-08-10", imagen: "../images/ring-image.jpg" },
+    { nombre: "Anillo minimalista", precio: 45.00, talla: "S", fecha: "2024-10-01", imagen: "../images/ring-image.jpg" },
+    { nombre: "Anillo doble banda", precio: 120.00, talla: "M", fecha: "2024-09-15", imagen: "../images/ring-image.jpg" },
+    { nombre: "Anillo personalizado", precio: 90.00, talla: "L", fecha: "2024-08-20", imagen: "../images/ring-image.jpg" },
+    { nombre: "Anillo vintage", precio: 75.00, talla: "S", fecha: "2024-10-10", imagen: "../images/ring-image.jpg" },
+    { nombre: "Anillo romántico", precio: 60.00, talla: "M", fecha: "2024-07-05", imagen: "../images/ring-image.jpg" },
 ];
 
 let carrito = JSON.parse(sessionStorage.getItem('carrito')) || []; // Carga el carrito desde sessionStorage
 
+const cardsContainer = document.getElementById('cardsContainer');
+
+anillos.forEach((anillo, index) => {
+    const card = document.createElement('div');
+    card.className = 'col-md-4 mb-4';
+    card.innerHTML = `
+        <div class="card">
+            <img src="${anillo.imagen}" class="card-img-top" alt="${anillo.nombre}">
+            <div class="card-body">
+                <h5 class="card-title">"${anillo.nombre}"</h5>
+                <p class="card-text">Precio: $${anillo.precio}</p>
+                <button class="btn btn-primary" onclick="openModal(${index})">Comprar ahora</button>
+            </div>
+        </div>
+    `;
+    cardsContainer.appendChild(card);
+});
+
+function openModal(index) {
+    const anillo = anillos[index];
+    document.getElementById('modalName').innerText = anillo.nombre;
+    document.getElementById('modalPrice').innerText = `Precio: $${anillo.precio}`;
+    document.getElementById('modalTalla').innerText = `Talla: ${anillo.talla}`;
+    document.getElementById('modalImage').src = anillo.imagen;
+    document.getElementById('modalQuantity').innerText = 1; // Default quantity
+    const modal = new bootstrap.Modal(document.getElementById('purchaseModal'));
+    modal.show();
+}
+
+document.getElementById('confirmPurchaseButton').addEventListener('click', () => {
+    const address = document.getElementById('address').value;
+    if (address) {
+        alert('Compra confirmada. Enviando a: ' + address);
+        const modal = bootstrap.Modal.getInstance(document.getElementById('purchaseModal'));
+        modal.hide();
+    } else {
+        alert('Por favor, ingresa tu dirección de envío.');
+    }
+});
 document.addEventListener('DOMContentLoaded', function () {
     const cardsContainer = document.getElementById('cardsContainer');
 
@@ -37,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             <!-- Botón Añadir al carrito -->
                             <button class="btn btn-secondary mt-3"
-                                src="../html/ventanaEmergente.html"
                                 onclick="añadirAlCarrito('${anillo.nombre}', ${anillo.precio}, '${anillo.talla}', this)">
                                 <i class="bi bi-cart"></i> Comprar ahora
                             </button>
@@ -57,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cantidadElement.textContent = cantidad;
     };
 
-    // Añade productos al carrito
+    /*// Añade productos al carrito
     window.añadirAlCarrito = function (nombre, precio, talla, button) {
         
         window.location.href = "../html/ventanaEmergente.html";
@@ -74,7 +112,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         sessionStorage.setItem('carrito', JSON.stringify(carrito)); // Guarda el carrito en sessionStorage
         console.log(carrito); // Muestra el carrito en la consola
+    };*/
+    window.añadirAlCarrito = function (nombre, precio, talla, button) {
+        const cantidad = parseInt(button.parentElement.querySelector('.cantidad').textContent); // Obtener la cantidad
+        const index = anillos.findIndex(item => item.nombre === nombre); // Obtener el índice del producto
+    
+        openModal(index, cantidad); // Mostrar el modal con la información del producto
     };
+
 
     // Filtrado por fecha, precio o nombre
     const dropdownItems = document.querySelectorAll('.dropdown-item');

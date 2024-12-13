@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $isLoggedIn = isset($_SESSION['usuario']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,18 +22,24 @@
             <div class="d-flex justify-content-between align-items-center">
                 <!-- Título centrado -->
                 <div class="flex-grow-1 text-center">
-                    <a href="homepage.html" class="text-decoration-none">
+                    <a href="homepage.php" class="text-decoration-none">
                         <h2 class="text-secondary fw-bold fs-1 m-0">Silver Heart's</h2>
                     </a>
                 </div>
-                <!-- Iconos de usuario e historial alineados a la derecha -->
+                <!-- Iconos de usuario y login -->
                 <div class="d-flex align-items-center">
-                    <a href="http://localhost/Taller-Web---Proyecto/php/login.php" class="btn btn-outline-secondary me-3 d-flex align-items-center">
-                        <i class="bi bi-person me-2"></i> <span class="d-none d-md-inline fs-5">Login</span>
-                    </a>
-                    <a href="historial.html" class="btn btn-outline-secondary d-flex align-items-center">
-                        <i class="bi bi-clock me-2"></i> <span class="d-none d-md-inline fs-5">Historial</span>
-                    </a>
+                    <?php if ($isLoggedIn): ?>
+                        <a href="usuario.php" class="btn btn-outline-secondary me-3 d-flex align-items-center">
+                            <i class="bi bi-person me-2"></i> Usuario
+                        </a>
+                        <a href="../php/cerrar_sesion.php" class="btn btn-outline-secondary d-flex align-items-center">
+                            <i class="bi bi-box-arrow-right me-2"></i> Cerrar sesión
+                        </a>
+                    <?php else: ?>
+                        <a href="login.php" class="btn btn-outline-secondary me-3 d-flex align-items-center">
+                            <i class="bi bi-person me-2"></i> Login
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -37,12 +47,12 @@
         <!-- Navegación -->
         <nav class="bg-light py-2">
             <div class="container d-flex justify-content-center">
-                <a href="homepage.html" class="nav-link text-secondary mx-3 fs-5">Inicio</a>
-                <a href="anillos.html" class="nav-link text-secondary mx-3 fs-5">Anillos</a>
-                <a href="cadenas.html" class="nav-link text-secondary mx-3 fs-5">Cadenas</a>
-                <a href="pulseras.html" class="nav-link text-secondary mx-3 fs-5">Pulseras</a>
-                <a href="personalizado.html" class="nav-link text-secondary mx-3 fs-5">Personalizados</a>
-                <a href="contactanos.html" class="nav-link text-secondary mx-3 fs-5">Contáctanos</a>
+                <a href="homepage.php" class="nav-link text-secondary mx-3 fs-5">Inicio</a>
+                <a href="anillos.php" class="nav-link text-secondary mx-3 fs-5">Anillos</a>
+                <a href="cadenas.php" class="nav-link text-secondary mx-3 fs-5">Cadenas</a>
+                <a href="pulseras.php" class="nav-link text-secondary mx-3 fs-5">Pulseras</a>
+                <a href="personalizado.php" class="nav-link text-secondary mx-3 fs-5">Personalizados</a>
+                <a href="contactanos.php" class="nav-link text-secondary mx-3 fs-5">Contáctanos</a>
             </div>
         </nav>
     </header>
@@ -146,6 +156,34 @@
             // Aquí puedes agregar lógica para enviar los datos del formulario si es necesario
         });
     </script>
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que se recargue la página
+
+        // Obtener los valores del formulario
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+
+        // Crear el contenido del correo
+        const subject = `Contacto de ${name}`;
+        const body = `
+            Nombre: ${name}
+            Correo Electrónico: ${email}
+            Teléfono: ${phone}
+            
+            Mensaje:
+            ${message}
+        `;
+
+        // Generar el enlace mailto
+        const mailtoLink = `mailto:silverhearts@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Abrir Gmail con el enlace generado
+        window.location.href = mailtoLink;
+    });
+</script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

@@ -1,14 +1,48 @@
 const cadenas = [
-    { nombre: "Cadena de Plata", precio: 29.99, fecha: "2024-10-12", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena de Oro", precio: 49.99, fecha: "2024-09-20", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena Personalizada", precio: 39.99, fecha: "2024-08-10", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena de Acero Inoxidable", precio: 24.99, fecha: "2024-10-05", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena con Colgante de Corazón", precio: 34.99, fecha: "2024-09-15", imagen: "https://via.placeholder.com/150" },
-    { nombre: "Cadena de perlas", precio: 59.99, fecha: "2024-08-01", imagen: "https://via.placeholder.com/150" },
+    { nombre: "Cadena de Plata", precio: 29.99, fecha: "2024-10-12", imagen: "../images/chain-image.jpg"  },
+    { nombre: "Cadena de Oro", precio: 49.99, fecha: "2024-09-20", imagen: "../images/chain-image.jpg" },
+    { nombre: "Cadena Personalizada", precio: 39.99, fecha: "2024-08-10", imagen: "../images/chain-image.jpg" },
+    { nombre: "Cadena de Acero Inoxidable", precio: 24.99, fecha: "2024-10-05", imagen: "../images/chain-image.jpg" },
+    { nombre: "Cadena con Colgante de Corazón", precio: 34.99, fecha: "2024-09-15", imagen: "../images/chain-image.jpg" },
+    { nombre: "Cadena de perlas", precio: 59.99, fecha: "2024-08-01", imagen: "../images/chain-image.jpg" },
 ];
 
 let carrito = JSON.parse(sessionStorage.getItem('carrito')) || []; // Carga el carrito desde sessionStorage
+const cardsContainer = document.getElementById('cardsContainer');
 
+cadenas.forEach((cadena, index) => {
+    const card = document.createElement('div');
+    card.className = 'col-md-4 mb-4';
+    card.innerHTML = `
+        <div class="card">
+            <img src="${cadena.imagen}" class="card-img-top" alt="${cadena.nombre}">
+            <div class="card-body">
+                <h5 class="card-title">${cadena.nombre}</h5>
+                <p class="card-text">Precio: $${cadena.precio}</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#purchaseModal" onclick="openModal(${index})">Comprar ahora</button>
+            </div>
+        </div>
+    `;
+    cardsContainer.appendChild(card);
+});
+
+function openModal(index, cantidad) {
+    const cadena = cadenas[index]; // Obtener el producto seleccionado
+    document.getElementById('modalName').innerText = cadena.nombre; // Nombre del producto
+    document.getElementById('modalPrice').innerText = `Precio: $${cadena.precio.toFixed(2)}`; // Precio
+    document.getElementById('modalDate').innerText = `Fecha: ${cadena.fecha}`; // Fecha
+    document.getElementById('modalImage').src = cadena.imagen; // Imagen
+    document.getElementById('modalQuantity').innerText = cantidad; // Cantidad
+
+    // Mostrar el modal
+    $('#purchaseModal').modal('show'); // Esto muestra el modal
+
+    // Añadir evento al botón de confirmar compra
+    document.getElementById('confirmPurchaseButton').onclick = function() {
+        alert("Compra realizada con éxito");
+        $('#purchaseModal').modal('hide'); // Cerrar el modal después de confirmar
+    };
+}
 document.addEventListener('DOMContentLoaded', function () {
     const cardsContainer = document.getElementById('cardsContainer');
 
@@ -54,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Añade productos al carrito
-    window.añadirAlCarrito = function (nombre, precio, button) {
+    /*window.añadirAlCarrito = function (nombre, precio, button) {
         window.location.href = "../html/ventanaEmergente.html";
         const cantidad = parseInt(button.parentElement.querySelector('.cantidad').textContent);
 
@@ -69,7 +103,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         sessionStorage.setItem('carrito', JSON.stringify(carrito)); // Guarda el carrito en sessionStorage
         console.log(carrito); // Muestra el carrito en la consola
-    };
+    };*/
+
+    window.añadirAlCarrito = function (nombre, precio, button) {
+    const cantidad = parseInt(button.parentElement.querySelector('.cantidad').textContent); // Obtener la cantidad
+    const index = cadenas.findIndex(item => item.nombre === nombre); // Obtener el índice del producto
+
+    openModal(index, cantidad); // Mostrar el modal con la información del producto
+};
+
 
     // Filtrado por fecha, precio o nombre
     const dropdownItems = document.querySelectorAll('.dropdown-item');
