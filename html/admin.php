@@ -199,234 +199,170 @@ $personalizados = json_encode([
 
                     <!-- Modal de Eliminar Producto -->
                     <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                       <div class="modal-dialog">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="deleteProductModalLabel">Eliminar Producto</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <h6 class="text-center">Lista de Productos</h6>
-                                    <div class="row">
-                                        <div class="col">
-                                            <h6>Anillos</h6>
-                                            <ul class="list-group" id="anillosList">
-                                                <?php
-                                                $anillosArray = json_decode($anillos, true);
-                                                foreach ($anillosArray as $producto) {
-                                                    echo "<li class='list-group-item'>
-                                                            <input type='checkbox' class='product-checkbox' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}'>
-                                                            {$producto['nombre']} - S/.{$producto['precio']}
-                                                        </li>";
-                                                }
-                                                ?>
-                                            </ul>
-                                        </div>
-                                        <div class="col">
-                                            <h6>Cadenas</h6>
-                                            <ul class="list-group" id="cadenasList">
-                                                <?php
-                                                $cadenasArray = json_decode($cadenas, true);
-                                                foreach ($cadenasArray as $producto) {
-                                                    echo "<li class='list-group-item'>
-                                                            <input type='checkbox' class='product-checkbox' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}'>
-                                                            {$producto['nombre']} - S/.{$producto['precio']}
-                                                        </li>";
-                                                }
-                                                ?>
-                                            </ul>
-                                        </div>
-                                        <div class="col">
-                                            <h6>Pulseras</h6>
-                                            <ul class="list-group" id="pulserasList">
-                                                <?php
-                                                $pulserasArray = json_decode($pulseras, true);
-                                                foreach ($pulserasArray as $producto) {
-                                                    echo "<li class='list-group-item'>
-                                                            <input type='checkbox' class='product-checkbox' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}'>
-                                                            {$producto['nombre']} - S/.{$producto['precio']}
-                                                        </li>";
-                                                }
-                                                ?>
-                                            </ul>
-                                        </div>
-                                        <div class="col">
-                                            <h6>Personalizados</h6>
-                                            <ul class="list-group" id="personalizadosList">
-                                                <?php
-                                                $personalizadosArray = json_decode($personalizados, true);
-                                                foreach ($personalizadosArray as $producto) {
-                                                    echo "<li class='list-group-item'>
-                                                            <input type='checkbox' class='product-checkbox' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}'>
-                                                            {$producto['nombre']} - S/.{$producto['precio']}
-                                                        </li>";
-                                                }
-                                                ?>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p class="mt-3">Selecciona un producto para eliminar.</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" id="confirmDeleteButton">Eliminar Producto</button>
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteProductModalLabel">Eliminar Producto</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                        </div>
-                    </div>
-                    <!-- Modal de Modificar Producto -->
-                    <div class="modal fade" id="modifyProductModal" tabindex="-1" aria-labelledby="modifyProductModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="modifyProductModalLabel">Modificar Producto</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <h6 class="text-center">Selecciona un Producto para Modificar</h6>
-                                    <div class="row">
-                                        <div class="col">
-                                            <h6>Anillos</h6>
-                                            <div id="anillosButtons">
-                                                <?php
-                                                $anillosArray = json_decode($anillos, true);
-                                                foreach ($anillosArray as $producto) {
-                                                    echo "<button class='btn btn-outline-primary m-1 modify-product-button' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}' data-product-category='anillos'>{$producto['nombre']}</button>";
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <h6>Cadenas</h6>
-                                            <div id="cadenasButtons">
-                                                <?php
-                                                $cadenasArray = json_decode($cadenas, true);
-                                                foreach ($cadenasArray as $producto) {
-                                                    echo "<button class='btn btn-outline-primary m-1 modify-product-button' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}' data-product-category='cadenas'>{$producto['nombre']}</button>";
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <h6>Pulseras</h6>
-                                            <div id="pulserasButtons">
-                                                <?php
-                                                $pulserasArray = json_decode($pulseras, true);
-                                                foreach ($pulserasArray as $producto) {
-                                                    echo "<button class='btn btn-outline-primary m-1 modify-product-button' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}' data-product-category='pulseras'>{$producto['nombre']}</button>";
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <h6>Personalizados</h6>
-                                            <div id="personalizadosButtons">
-                                                <?php
-                                                $personalizadosArray = json_decode($personalizados, true);
-                                                foreach ($personalizadosArray as $producto) {
-                                                    echo "<button class='btn btn-outline-primary m-1 modify-product-button' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}' data-product-category='personalizados'>{$producto['nombre']}</button>";
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
+                            <div class="modal-body">
+                                <h6 class="text-center">Lista de Productos</h6>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>Anillos</h6>
+                                        <ul class="list-group" id="anillosList">
+                                            <?php
+                                            $anillosArray = json_decode($anillos, true);
+                                            foreach ($anillosArray as $producto) {
+                                                echo "<li class='list-group-item'>
+                                                        <input type='checkbox' class='product-checkbox' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}'>
+                                                        {$producto['nombre']} - S/.{$producto['precio']}
+                                                    </li>";
+                                            }
+                                            ?>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h6>Cadenas</h6>
+                                        <ul class="list-group" id="cadenasList">
+                                            <?php
+                                            $cadenasArray = json_decode($cadenas, true);
+                                            foreach ($cadenasArray as $producto) {
+                                                echo "<li class='list-group-item'>
+                                                        <input type='checkbox' class='product-checkbox' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}'>
+                                                        {$producto['nombre']} - S/.{$producto['precio']}
+                                                    </li>";
+                                            }
+                                            ?>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h6>Pulseras</h6>
+                                        <ul class="list-group" id="pulserasList">
+                                            <?php
+                                            $pulserasArray = json_decode($pulseras, true);
+                                            foreach ($pulserasArray as $producto) {
+                                                echo "<li class='list-group-item'>
+                                                        <input type='checkbox' class='product-checkbox' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}'>
+                                                        {$producto['nombre']} - S/.{$producto['precio']}
+                                                    </li>";
+                                            }
+                                            ?>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h6>Personalizados</h6>
+                                        <ul class="list-group" id="personalizadosList">
+                                            <?php
+                                            $personalizadosArray = json_decode($personalizados, true);
+                                            foreach ($personalizadosArray as $producto) {
+                                                echo "<li class='list-group-item'>
+                                                        <input type='checkbox' class='product-checkbox' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}'>
+                                                        {$producto['nombre']} - S/.{$producto['precio']}
+                                                    </li>";
+                                            }
+                                            ?>
+                                        </ul>
                                     </div>
                                 </div>
+                                <p class="mt-3">Selecciona un producto para eliminar.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Eliminar Producto</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Modal para Editar Atributos del Producto -->
-                    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="editProductModalLabel">Editar Producto</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form id="editProductForm">
-                                        <div class="mb-3">
-                                            <label for="editProductName" class="form-label">Nombre</label>
-                                            <input type="text" class="form-control" id="editProductName" name="nombre" required>
+                </div>
+                <!-- Modal de Modificar Producto -->
+                <div class="modal fade" id="modifyProductModal" tabindex="-1" aria-labelledby="modifyProductModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modifyProductModalLabel">Modificar Producto</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h6 class="text-center">Selecciona un Producto para Modificar</h6>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>Anillos</h6>
+                                        <div id="anillosButtons">
+                                            <?php
+                                            $anillosArray = json_decode($anillos, true);
+                                            foreach ($anillosArray as $producto) {
+                                                echo "<button class='btn btn-outline-primary m-1 modify-product-button' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}' data-product-category='anillos'>{$producto['nombre']}</button>";
+                                            }
+                                            ?>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="editProductPrice" class="form-label">Precio</label>
-                                            <input type="number" class="form-control" id="editProductPrice" name="precio" required step="0.01">
+                                    </div>
+                                    <div class="col">
+                                        <h6>Cadenas</h6>
+                                        <div id="cadenasButtons">
+                                            <?php
+                                            $cadenasArray = json_decode($cadenas, true);
+                                            foreach ($cadenasArray as $producto) {
+                                                echo "<button class='btn btn-outline-primary m-1 modify-product-button' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}' data-product-category='cadenas'>{$producto['nombre']}</button>";
+                                            }
+                                            ?>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="editProductCategory" class="form-label">Categoría</label>
-                                            <input type="text" class="form-control" id="editProductCategory" name="categoria" readonly>
+                                    </div>
+                                    <div class="col">
+                                        <h6>Pulseras</h6>
+                                        <div id="pulserasButtons">
+                                            <?php
+                                            $pulserasArray = json_decode($pulseras, true);
+                                            foreach ($pulserasArray as $producto) {
+                                                echo "<button class='btn btn-outline-primary m-1 modify-product-button' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}' data-product-category='pulseras'>{$producto['nombre']}</button>";
+                                            }
+                                            ?>
                                         </div>
-                                        <button type=" submit" class="btn btn-primary" id="saveChangesButton">Guardar Cambios</button>
-                                    </form>
+                                    </div>
+                                    <div class="col">
+                                        <h6>Personalizados</h6>
+                                        <div id="personalizadosButtons">
+                                            <?php
+                                            $personalizadosArray = json_decode($personalizados, true);
+                                            foreach ($personalizadosArray as $producto) {
+                                                echo "<button class='btn btn-outline-primary m-1 modify-product-button' data-product-name='{$producto['nombre']}' data-product-price='{$producto['precio']}' data-product-category='personalizados'>{$producto['nombre']}</button>";
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <script>
-                        // Manejar el clic en los botones de modificar producto
-                        document.querySelectorAll('.modify-product-button').forEach(button => {
-                            button.addEventListener('click', function() {
-                                // Obtener los datos del producto
-                                const productName = this.getAttribute('data-product-name');
-                                const productPrice = this.getAttribute('data-product-price');
-                                const productCategory = this.getAttribute('data-product-category');
+                </div>
 
-                                // Llenar el formulario de edición con los datos del producto
-                                document.getElementById('editProductName').value = productName;
-                                document.getElementById('editProductPrice').value = productPrice;
-                                document.getElementById('editProductCategory').value = productCategory;
-
-                                // Mostrar el modal de edición
-                                $('#editProductModal').modal('show');
-                            });
-                        });
-
-                        // Manejar el envío del formulario de edición
-                        document.getElementById('editProductForm').addEventListener('submit', function(event) {
-                            event.preventDefault(); // Evitar el envío del formulario para mostrar el alert
-
-                            // Aquí puedes agregar la lógica para enviar el formulario si es necesario
-
-                            // Mostrar el alert
-                            alert("Producto modificado con éxito");
-
-                            // Cerrar el modal
-                            $('#editProductModal').modal('hide');
-
-                            // Reiniciar el formulario
-                            this.reset();
-                        });
-                    </script>
-                    <script>
-                         // Manejar el envío del formulario de agregar producto
-                        document.getElementById('addProductForm').addEventListener('submit', function(event) {
-                        event.preventDefault(); // Evitar el envío del formulario para mostrar el alert
-
-                        // Aquí puedes agregar la lógica para enviar el formulario si es necesario
-
-                        // Mostrar el alert
-                        alert("Producto agregado con éxito");
-
-                        // Cerrar el modal
-                        $('#addProductModal').modal('hide');
-
-                        // Reiniciar el formulario
-                        this.reset();
-                    });   
-
-                    // Manejar el clic en el botón de guardar cambios
-                    document.getElementById('saveChangesButton').addEventListener('click', function() {
-                        // Aquí puedes agregar la lógica para guardar los cambios en la base de datos
-                        // Por ejemplo, hacer una llamada AJAX para actualizar el producto en el servidor
-
-                        // Mostrar un mensaje de confirmación
-                        alert("Los cambios han sido guardados.");
-
-                        // Cerrar el modal de edición
-                        $('#editProductModal').modal('hide');
-                    });
-                </script>
+                <!-- Modal para Editar Atributos del Producto -->
+                <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editProductModalLabel">Editar Producto</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editProductForm">
+                                    <div class="mb-3">
+                                        <label for="editProductName" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="editProductName" name="nombre" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editProductPrice" class="form-label">Precio</label>
+                                        <input type="number" class="form-control" id="editProductPrice" name="precio" required step="0.01">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editProductCategory" class="form-label">Categoría</label>
+                                        <input type="text" class="form-control" id="editProductCategory" name="categoria" readonly>
+                                    </div>
+                                    <button type=" submit" class="btn btn-primary" id="saveChangesButton">Guardar Cambios</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

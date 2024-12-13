@@ -10,3 +10,4 @@ document.getElementById('saveChangesButton').addEventListener('click', function(
     // Cerrar el modal de edición
     $('#editProductModal').modal('hide');
 });
+
