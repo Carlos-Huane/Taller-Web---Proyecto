@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
     <title>Silver Heart's</title>
 </head>
-
 <body>
     <!-- HEADER -->
     <header class="bg-light border-bottom border-secondary shadow-sm">
@@ -169,7 +168,9 @@
             <div class="row align-items-center">
                 <!-- Texto -->
                 <div class="col-md-6 mb-3 mb-md-0">
-                    <p>Proin at scelerisque libero, vitae sagittis felis. Mauris gravida dolor vitae finibus bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam bibendum faucibus nibh ullamcorper ultricies. Duis sit amet massa sed dui dignissim sollicitudin. Mauris euismod, massa vitae fermentum semper, ante turpis iaculis orci, ut ultrices libero quam ac est. Sed et dignissim tellus. Cras dapibus, nulla et finibus dictum, elit elit facilisis magna, sed iaculis urna lacus ut mauris. Nunc mattis porttitor sagittis. Proin porttitor efficitur turpis. Suspendisse non ultricies nibh. Etiam volutpat fermentum tortor accumsan consequat. Quisque commodo lacus et neque finibus pharetra. Praesent dignissim feugiat sem, sed semper ante accumsan at.</p>
+                    <p>En Silver Heart's, nos dedicamos a crear joyas personalizadas que celebran los momentos más especiales de la vida. Nuestra misión es ofrecer productos de alta calidad que reflejen el amor y la conexión entre parejas.</p>
+                    <p>Desde anillos hasta pulseras, cada pieza es elaborada con atención al detalle y un compromiso con la excelencia. Creemos que cada joya cuenta una historia, y estamos aquí para ayudarte a contar la tuya.</p>
+                    <p>Únete a nosotros en este viaje de amor y creatividad, y descubre cómo nuestras joyas pueden hacer que tus momentos sean aún más memorables.</p>
                 </div>
                 <!-- Imagen -->
                 <div class="col-md-6 text-center">
@@ -178,46 +179,50 @@
             </div>
         </div>
     </section>
-
-
     <!-- FOOTER -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-5">
         <div class="container">
             <div class="row text-center text-md-start">
                 <!-- 1 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>Silver Heart's</h3>
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold mb-3">Silver Heart's</h3>
+                    <p class="text-white">Creando joyas personalizadas para momentos inolvidables.</p>
                     <ul class="list-unstyled">
-                        <li><a href="#sobreNosotros" class="text-white">CONÓCENOS</a></li>
-                        <li><a href="contactanos.php" class="text-white">CONTÁCTANOS</a></li>
+                        <li class="mb-2"><a href="#sobreNosotros" class="text-white text-decoration-none">CONÓCENOS</a></li>
+                        <li><a href="contactanos.php" class="text-white text-decoration-none">CONTÁCTANOS</a></li>
                     </ul>
                 </div>
                 <!-- 2 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>ENLACES</h3>
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold mb-3">Enlaces</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">POLÍTICAS DE ENVÍO</a></li>
-                        <li><a href="#" class="text-white">CAMBIOS Y DEVOLUCIONES</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">POLÍTICAS DE ENVÍO</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">CAMBIOS Y DEVOLUCIONES</a></li>
                     </ul>
                 </div>
                 <!-- 3 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>REDES SOCIALES</h3>
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold">Redes Sociales</h3>
                     <ul class="list-unstyled">
                         <li class="d-flex align-items-center justify-content-center justify-content-md-start">
                             <i class="bi bi-telephone-fill me-2"></i>
-                            <a href="https://wa.me/51999999999" target="_blank" class="text-white">+51 999999999</a>
+                            <a href="https://wa.me/51999999999" target="_blank" class="text-white text-decoration-none">+51 999999999</a>
                         </li>
                         <li class="d-flex align-items-center justify-content-center justify-content-md-start">
                             <i class="bi bi-facebook me-2"></i>
-                            <a href="https://www.facebook.com/tu-pagina" target="_blank" class="text-white">Facebook</a>
+                            <a href="https://www.facebook.com/tu-pagina" target="_blank" class="text-white text-decoration-none">Facebook</a>
                         </li>
                         <li class="d-flex align-items-center justify-content-center justify-content-md-start">
                             <i class="bi bi-instagram me-2"></i>
-                            <a href="https://www.instagram.com/tu-usuario" target="_blank" class="text-white">Instagram</a>
+                            <a href="https://www.instagram.com/tu-usuario" target="_blank" class="text-white text-decoration-none">Instagram</a>
                         </li>
                     </ul>
                 </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.2);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Silver Heart's. Todos los derechos reservados.</p>
+                <p class="mb-0"><a href="#" class="text-white text-decoration-none">Política de Privacidad</a> | <a href="#" class="text-white text-decoration-none">Términos de Servicio</a></p>
             </div>
         </div>
     </footer>

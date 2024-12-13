@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
     <!-- BOOTSTRAP JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <title>Silver Heart's - Personalizados</title>
@@ -79,50 +80,82 @@
         <!-- Tarjetas de productos -->
         <div class="row mt-3" id="cardsContainer"></div>
     </main>
-
+    <!-- Modal -->
+    <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCompraLabel">Confirmar Compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImagen" src="" class="img-fluid" alt="Imagen del producto">
+                    <h5 id="modalNombre"></h5>
+                    <p id="modalPrecio"></p>
+                    <p id="modalMaterial"></p>
+                    <p>Texto Personalizado: <span id="modalTextoPersonalizado"></span></p>
+                    <div class="mb-3">
+                        <label for="direccionEnvio" class="form-label">Dirección de Envío</label>
+                        <input type="text" class="form-control" id="direccionEnvio" placeholder="Ingrese su dirección">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="btnConfirmarCompra">Confirmar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>                       
     <!-- FOOTER -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-5">
         <div class="container">
             <div class="row text-center text-md-start">
                 <!-- 1 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>Silver Heart's</h3>
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold mb-3">Silver Heart's</h3>
+                    <p class="text-white">Creando joyas personalizadas para momentos inolvidables.</p>
                     <ul class="list-unstyled">
-                        <li><a href="contactanos.php" class="text-white">CONÓCENOS</a></li>
-                        <li><a href="contactanos.php" class="text-white">CONTÁCTANOS</a></li>
+                        <li class="mb-2"><a href="#sobreNosotros" class="text-white text-decoration-none">CONÓCENOS</a></li>
+                        <li><a href="contactanos.php" class="text-white text-decoration-none">CONTÁCTANOS</a></li>
                     </ul>
                 </div>
                 <!-- 2 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>ENLACES</h3>
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold mb-3">Enlaces</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">POLÍTICAS DE ENVÍO</a></li>
-                        <li><a href="#" class="text-white">CAMBIOS Y DEVOLUCIONES</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">POLÍTICAS DE ENVÍO</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">CAMBIOS Y DEVOLUCIONES</a></li>
                     </ul>
                 </div>
                 <!-- 3 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>REDES SOCIALES</h3>
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold">Redes Sociales</h3>
                     <ul class="list-unstyled">
                         <li class="d-flex align-items-center justify-content-center justify-content-md-start">
                             <i class="bi bi-telephone-fill me-2"></i>
-                            <a href="https://wa.me/51999999999" target="_blank" class="text-white">+51 999999999</a>
+                            <a href="https://wa.me/51999999999" target="_blank" class="text-white text-decoration-none">+51 999999999</a>
                         </li>
                         <li class="d-flex align-items-center justify-content-center justify-content-md-start">
                             <i class="bi bi-facebook me-2"></i>
-                            <a href="https://www.facebook.com/tu-pagina" target="_blank" class="text-white">Facebook</a>
+                            <a href="https://www.facebook.com/tu-pagina" target="_blank" class="text-white text-decoration-none">Facebook</a>
                         </li>
                         <li class="d-flex align-items-center justify-content-center justify-content-md-start">
                             <i class="bi bi-instagram me-2"></i>
-                            <a href="https://www.instagram.com/tu-usuario" target="_blank" class="text-white">Instagram</a>
+                            <a href="https://www.instagram.com/tu-usuario" target="_blank" class="text-white text-decoration-none">Instagram</a>
                         </li>
                     </ul>
                 </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.2);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Silver Heart's. Todos los derechos reservados.</p>
+                <p class="mb-0"><a href="#" class="text-white text-decoration-none">Política de Privacidad</a> | <a href="#" class="text-white text-decoration-none">Términos de Servicio</a></p>
             </div>
         </div>
     </footer>
 
     <!-- Incluir el archivo JavaScript -->
     <script src="../js/personalizado.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

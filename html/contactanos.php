@@ -103,47 +103,6 @@
             </div>
         </div>
     </div>
-    
-
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row text-center text-md-start">
-                <!-- 1 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>Silver Heart's</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">CONÓCENOS</a></li>
-                        <li><a href="#" class="text-white">CONTÁCTANOS</a></li>
-                    </ul>
-                </div>
-                <!-- 2 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>ENLACES</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">POLÍTICAS DE ENVÍO</a></li>
-                        <li><a href="#" class="text-white">CAMBIOS Y DEVOLUCIONES</a></li>
-                    </ul>
-                </div>
-                <!-- 3 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>REDES SOCIALES</h3>
-                    <ul class="list-unstyled">
-                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
-                            <i class="bi bi-telephone-fill me-2"></i> +51 999999999
-                        </li>
-                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
-                            <i class="bi bi-facebook me-2"></i> Facebook
-                        </li>
-                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
-                            <i class="bi bi-instagram me-2"></i> Instagram
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script>
         // Función que se ejecuta cuando el formulario es enviado
         document.getElementById('contactForm').addEventListener('submit', function(event) {
@@ -157,33 +116,80 @@
         });
     </script>
     <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evitar que se recargue la página
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que se recargue la página
 
-        // Obtener los valores del formulario
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const message = document.getElementById('message').value;
+            // Obtener los valores del formulario
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
 
-        // Crear el contenido del correo
-        const subject = `Contacto de ${name}`;
-        const body = `
-            Nombre: ${name}
-            Correo Electrónico: ${email}
-            Teléfono: ${phone}
-            
-            Mensaje:
-            ${message}
-        `;
+            // Crear el contenido del correo
+            const subject = `Contacto de ${name}`;
+            const body = `
+                Nombre: ${name}
+                Correo Electrónico: ${email}
+                Teléfono: ${phone}
+                
+                Mensaje:
+                ${message}
+            `;
 
-        // Generar el enlace mailto
-        const mailtoLink = `mailto:silverhearts@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            // Generar el enlace mailto
+            const mailtoLink = `mailto:silverhearts@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-        // Abrir Gmail con el enlace generado
-        window.location.href = mailtoLink;
-    });
-</script>
+            // Abrir Gmail con el enlace generado
+            window.location.href = mailtoLink;
+        });
+    </script>
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- 1 COLUMNA -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold mb-3">Silver Heart's</h3>
+                    <p class="text-white">Creando joyas personalizadas para momentos inolvidables.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#sobreNosotros" class="text-white text-decoration-none">CONÓCENOS</a></li>
+                        <li><a href="contactanos.php" class="text-white text-decoration-none">CONTÁCTANOS</a></li>
+                    </ul>
+                </div>
+                <!-- 2 COLUMNA -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold mb-3">Enlaces</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">POLÍTICAS DE ENVÍO</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">CAMBIOS Y DEVOLUCIONES</a></li>
+                    </ul>
+                </div>
+                <!-- 3 COLUMNA -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold">Redes Sociales</h3>
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
+                            <i class="bi bi-telephone-fill me-2"></i>
+                            <a href="https://wa.me/51999999999" target="_blank" class="text-white text-decoration-none">+51 999999999</a>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
+                            <i class="bi bi-facebook me-2"></i>
+                            <a href="https://www.facebook.com/tu-pagina" target="_blank" class="text-white text-decoration-none">Facebook</a>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
+                            <i class="bi bi-instagram me-2"></i>
+                            <a href="https://www.instagram.com/tu-usuario" target="_blank" class="text-white text-decoration-none">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.2);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Silver Heart's. Todos los derechos reservados.</p>
+                <p class="mb-0"><a href="#" class="text-white text-decoration-none">Política de Privacidad</a> | <a href="#" class="text-white text-decoration-none">Términos de Servicio</a></p>
+            </div>
+        </div>
+    </footer>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

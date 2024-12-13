@@ -51,8 +51,8 @@ cadenas.forEach((cadena, index) => {
 function openModal(index, cantidad) {
     const cadena = cadenas[index]; // Obtener el producto seleccionado
     document.getElementById('modalName').innerText = cadena.nombre; // Nombre del producto
-    document.getElementById('modalPrice').innerText = `Precio: $${cadena.precio.toFixed(2)}`; // Precio
-    document.getElementById('modalDate').innerText = `Fecha: ${cadena.fecha}`; // Fecha
+    document.getElementById('modalPrice').innerText = `Precio: S/.${cadena.precio.toFixed(2)}`; // Precio
+    document.getElementById('modallongitud').innerText = `Longitud: ${cadena.longitud}`; // Fecha
     document.getElementById('modalImage').src = cadena.imagen; // Imagen
     document.getElementById('modalQuantity').innerText = cantidad; // Cantidad
 

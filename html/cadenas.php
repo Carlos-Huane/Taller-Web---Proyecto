@@ -78,49 +78,6 @@
         </div>
         <div class="row mt-3" id="cardsContainer"></div>
     </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row text-center text-md-start">
-                <!-- 1 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>Silver Heart's</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="contactanos.php" class="text-white">CONÓCENOS</a></li>
-                        <li><a href="contactanos.php" class="text-white">CONTÁCTANOS</a></li>
-                    </ul>
-                </div>
-                <!-- 2 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>ENLACES</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">POLÍTICAS DE ENVÍO</a></li>
-                        <li><a href="#" class="text-white">CAMBIOS Y DEVOLUCIONES</a></li>
-                    </ul>
-                </div>
-                <!-- 3 COLUMNA -->
-                <div class="col-md-4 mb-3">
-                    <h3>REDES SOCIALES</h3>
-                    <ul class="list-unstyled">
-                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
-                            <i class="bi bi-telephone-fill me-2"></i>
-                            <a href="https://wa.me/51999999999" target="_blank" class="text-white">+51 999999999</a>
-                        </li>
-                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
-                            <i class="bi bi-facebook me-2"></i>
-                            <a href="https://www.facebook.com/tu-pagina" target="_blank" class="text-white">Facebook</a>
-                        </li>
-                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
-                            <i class="bi bi-instagram me-2"></i>
-                            <a href="https://www.instagram.com/tu-usuario" target="_blank" class="text-white">Instagram</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
     <!-- Modal -->
     <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -137,7 +94,7 @@
                         <div class="col-md-6">
                             <h5 id="modalName"></h5>
                             <p id="modalPrice"></p>
-                            <p id="modalDate"></p>
+                            <p id="modallongitud"></p>
                             <p>Cantidad: <span id="modalQuantity"></span></p>
                         </div>
                     </div>
@@ -153,7 +110,53 @@
             </div>
         </div>
     </div>
-
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- 1 COLUMNA -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold mb-3">Silver Heart's</h3>
+                    <p class="text-white">Creando joyas personalizadas para momentos inolvidables.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#sobreNosotros" class="text-white text-decoration-none">CONÓCENOS</a></li>
+                        <li><a href="contactanos.php" class="text-white text-decoration-none">CONTÁCTANOS</a></li>
+                    </ul>
+                </div>
+                <!-- 2 COLUMNA -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold mb-3">Enlaces</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">POLÍTICAS DE ENVÍO</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">CAMBIOS Y DEVOLUCIONES</a></li>
+                    </ul>
+                </div>
+                <!-- 3 COLUMNA -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="text-uppercase fw-bold">Redes Sociales</h3>
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
+                            <i class="bi bi-telephone-fill me-2"></i>
+                            <a href="https://wa.me/51999999999" target="_blank" class="text-white text-decoration-none">+51 999999999</a>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
+                            <i class="bi bi-facebook me-2"></i>
+                            <a href="https://www.facebook.com/tu-pagina" target="_blank" class="text-white text-decoration-none">Facebook</a>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-center justify-content-md-start">
+                            <i class="bi bi-instagram me-2"></i>
+                            <a href="https://www.instagram.com/tu-usuario" target="_blank" class="text-white text-decoration-none">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.2);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Silver Heart's. Todos los derechos reservados.</p>
+                <p class="mb-0"><a href="#" class="text-white text-decoration-none">Política de Privacidad</a> | <a href="#" class="text-white text-decoration-none">Términos de Servicio</a></p>
+            </div>
+        </div>
+    </footer>
     
 
     <!-- Incluir el archivo JavaScript -->

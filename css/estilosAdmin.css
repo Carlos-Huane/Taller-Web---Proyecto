@@ -44,3 +44,11 @@ footer {
         margin: 0 auto;
     }
 }
+
+.profile img {
+    border-radius: 50%; 
+    width: 512px; 
+    height: 512px; 
+    object-fit: cover; 
+    margin-bottom: 20px; 
+}

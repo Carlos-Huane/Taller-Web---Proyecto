@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             <!-- Input de texto personalizado -->
                             <input type="text" class="form-control mb-2" placeholder="Ingrese el texto personalizado" id="inputPersonalizado-${item.nombre}">
                             
-                            <button class="btn btn-secondary mt-3" 
-                                onclick="añadirAlCarrito('${item.nombre}', ${item.precio}, '${item.fecha}', 'inputPersonalizado-${item.nombre}', this)">
+                            <button type="button" class="btn btn-secondary mt-3" 
+                                onclick="añadirAlCarrito('${item.nombre}', ${item.precio}, '${item.fecha}', 'inputPersonalizado-${item.nombre}', this, event)">
                                 <i class="bi bi-cart"></i> Comprar ahora
                             </button>
                         </div>
@@ -70,21 +70,44 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Añade productos personalizados al carrito
-    window.añadirAlCarrito = function (nombre, precio, fecha, inputId, button) {
-        window.location.href = "../html/ventanaEmergente.html";
+    window.añadirAlCarrito = function (nombre, precio, fecha, inputId, button, event) {
+        event.preventDefault(); // Previene el comportamiento por defecto
+
         const textoPersonalizado = document.getElementById(inputId).value;
-        const cantidad = 1; // Puedes ajustar según sea necesario
 
-        const productoExistente = carrito.find(item => item.nombre === nombre);
+        // Obtener el producto correspondiente
+        const producto = personalizados.find(item => item.nombre === nombre);
 
-        if (productoExistente) {
-            productoExistente.cantidad += cantidad; 
-        } else {
-            carrito.push({ nombre, precio, fecha, cantidad, textoPersonalizado }); 
-        }
+        // Mostrar información en el modal
+        document.getElementById('modalNombre').innerText = producto.nombre;
+        document.getElementById('modalPrecio').innerText = `Precio: S/${producto.precio.toFixed(2)}`;
+        document.getElementById('modalMaterial').innerText = `Material: ${producto.material}`;
+        document.getElementById('modalTextoPersonalizado').innerText = textoPersonalizado;
+        document.getElementById('modalImagen').src = producto.imagen;
 
-        sessionStorage.setItem('carrito', JSON.stringify(carrito)); 
-        console.log(carrito); 
+        // Mostrar el modal
+        const modal = new bootstrap.Modal(document.getElementById('modalCompra'));
+        modal.show();
+
+        // Manejar la confirmación de compra
+        document.getElementById('btnConfirmarCompra').onclick = function() {
+            const direccionEnvio = document.getElementById('direccionEnvio').value;
+            const cantidad = 1; // Puedes ajustar según sea necesario
+
+            const productoExistente = carrito.find(item => item.nombre === nombre);
+
+            if (productoExistente) {
+                productoExistente.cantidad += cantidad; 
+            } else {
+                carrito.push({ nombre, precio, fecha, cantidad, textoPersonalizado, direccionEnvio }); 
+            }
+
+            sessionStorage.setItem('carrito', JSON.stringify(carrito)); 
+            console.log(carrito); 
+
+            // Cerrar el modal
+            modal.hide();
+        };
     };
 
     // Renderiza los personalizados al cargar la página
