@@ -1,12 +1,12 @@
 const anillos = [
-    { nombre: "Anillo con corazón grabado", precio: 35.00, talla: "S", fecha: "2024-10-12", imagen: "../images/ring-image.jpg" },
-    { nombre: "Anillo de oro clásico", precio: 150.00, talla: "M", fecha: "2024-09-20", imagen: "../images/ring-image.jpg" },
-    { nombre: "Anillo de plata con piedras", precio: 80.00, talla: "L", fecha: "2024-08-10", imagen: "../images/ring-image.jpg" },
-    { nombre: "Anillo minimalista", precio: 45.00, talla: "S", fecha: "2024-10-01", imagen: "../images/ring-image.jpg" },
-    { nombre: "Anillo doble banda", precio: 120.00, talla: "M", fecha: "2024-09-15", imagen: "../images/ring-image.jpg" },
-    { nombre: "Anillo personalizado", precio: 90.00, talla: "L", fecha: "2024-08-20", imagen: "../images/ring-image.jpg" },
-    { nombre: "Anillo vintage", precio: 75.00, talla: "S", fecha: "2024-10-10", imagen: "../images/ring-image.jpg" },
-    { nombre: "Anillo romántico", precio: 60.00, talla: "M", fecha: "2024-07-05", imagen: "../images/ring-image.jpg" },
+    { nombre: "Anillo con corazón grabado", precio: 35.00, talla: "S", fecha: "2024-10-12", imagen: "https://i.pinimg.com/736x/fb/1a/3c/fb1a3c837b5308b9bda1e0be4f00513d.jpg" },
+    { nombre: "Anillo de oro clásico", precio: 150.00, talla: "M", fecha: "2024-09-20", imagen: "https://i.pinimg.com/736x/5f/ed/41/5fed4174d5a329bacd3ed297f802bc68.jpg" },
+    { nombre: "Anillo de plata con piedras", precio: 80.00, talla: "L", fecha: "2024-08-10", imagen: "https://i.pinimg.com/736x/b1/02/ac/b102ac1bd233b6e9dc84118e5298c4c0.jpg" },
+    { nombre: "Anillo minimalista", precio: 45.00, talla: "S", fecha: "2024-10-01", imagen: "https://i.pinimg.com/736x/5f/ed/41/5fed4174d5a329bacd3ed297f802bc68.jpg" },
+    { nombre: "Anillo doble banda", precio: 120.00, talla: "M", fecha: "2024-09-15", imagen: "https://i.pinimg.com/736x/49/e8/d8/49e8d81bdb1e6986eb012e604aaeb3ea.jpg" },
+    { nombre: "Anillo personalizado", precio: 90.00, talla: "L", fecha: "2024-08-20", imagen: "https://i.pinimg.com/736x/fb/1a/3c/fb1a3c837b5308b9bda1e0be4f00513d.jpg" },
+    { nombre: "Anillo vintage", precio: 75.00, talla: "S", fecha: "2024-10-10", imagen: "https://i.pinimg.com/736x/49/e8/d8/49e8d81bdb1e6986eb012e604aaeb3ea.jpg" },
+    { nombre: "Anillo romántico", precio: 60.00, talla: "M", fecha: "2024-07-05", imagen: "https://i.pinimg.com/736x/5f/ed/41/5fed4174d5a329bacd3ed297f802bc68.jpg" }
 ];
 
 let carrito = JSON.parse(sessionStorage.getItem('carrito')) || []; // Carga el carrito desde sessionStorage

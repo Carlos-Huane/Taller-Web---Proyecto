@@ -1,10 +1,32 @@
 const cadenas = [
-    { nombre: "Cadena de Plata", precio: 29.99, fecha: "2024-10-12", imagen: "../images/chain-image.jpg"  },
-    { nombre: "Cadena de Oro", precio: 49.99, fecha: "2024-09-20", imagen: "../images/chain-image.jpg" },
-    { nombre: "Cadena Personalizada", precio: 39.99, fecha: "2024-08-10", imagen: "../images/chain-image.jpg" },
-    { nombre: "Cadena de Acero Inoxidable", precio: 24.99, fecha: "2024-10-05", imagen: "../images/chain-image.jpg" },
-    { nombre: "Cadena con Colgante de Corazón", precio: 34.99, fecha: "2024-09-15", imagen: "../images/chain-image.jpg" },
-    { nombre: "Cadena de perlas", precio: 59.99, fecha: "2024-08-01", imagen: "../images/chain-image.jpg" },
+    { 
+        nombre: "Collar corazón dorado", 
+        precio: 50.00, 
+        material: "Oro", 
+        longitud: "45 cm", 
+        imagen: "https://i.pinimg.com/236x/95/d4/f4/95d4f4dcd37b50f22f4eb7ec98387e19.jpg" 
+    },
+    { 
+        nombre: "Collar perlas minimalista", 
+        precio: 40.00, 
+        material: "Plata", 
+        longitud: "40 cm", 
+        imagen: "https://i.pinimg.com/736x/68/70/6b/68706b727ef8147b69cfbd07cec5be83.jpg" 
+    },
+    { 
+        nombre: "Collar con dije de estrella", 
+        precio: 45.00, 
+        material: "Acero inoxidable", 
+        longitud: "50 cm", 
+        imagen: "https://i.pinimg.com/236x/5a/e5/1e/5ae51ee2b4278ee70da0622d11f0c9aa.jpg" 
+    },
+    { 
+        nombre: "Collar romántico con piedras", 
+        precio: 60.00, 
+        material: "Plata y cristales", 
+        longitud: "55 cm", 
+        imagen: "https://i.pinimg.com/236x/64/51/c7/6451c762ba6b34080aa44f1298fc84f0.jpg" 
+    }
 ];
 
 let carrito = JSON.parse(sessionStorage.getItem('carrito')) || []; // Carga el carrito desde sessionStorage

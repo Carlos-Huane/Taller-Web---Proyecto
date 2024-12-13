@@ -1,12 +1,39 @@
 const personalizados = [
-    { nombre: "Anillo con grabado personalizado", precio: 40.00, fecha: "2024-09-01", imagen: "../images/custom-image.jpg" },
-    { nombre: "Pulsera grabada", precio: 50.00, fecha: "2024-09-20", imagen: "../images/custom-image.jpg"},
-    { nombre: "Cadena personalizada", precio: 100.00, fecha: "2024-08-10", imagen: "../images/custom-image.jpg" },
-    { nombre: "Anillo doble personalizado", precio: 60.00, fecha: "2024-10-05", imagen: "../images/custom-image.jpg" },
-    { nombre: "Pulsera con iniciales grabadas", precio: 45.00, fecha: "2024-09-25", imagen: "../images/custom-image.jpg" },
-    { nombre: "Cadena con nombre grabado", precio: 120.00, fecha: "2024-08-15", imagen: "../images/custom-image.jpg" },
-    { nombre: "Anillo con fecha especial", precio: 55.00, fecha: "2024-09-12", imagen: "../images/custom-image.jpg" },
-    { nombre: "Pulsera con grabado de amor", precio: 70.00, fecha: "2024-09-30", imagen: "../images/custom-image.jpg" }
+    { 
+        nombre: "Collar con iniciales grabadas", 
+        precio: 45.00, 
+        material: "Acero inoxidable", 
+        personalizable: true, 
+        imagen: "https://i.pinimg.com/236x/9f/52/b3/9f52b3222fd64bed5cb2c00b19fd3ee4.jpg" 
+    },
+    { 
+        nombre: "Pulsera de pareja personalizada", 
+        precio: 50.00, 
+        material: "Cuero y acero", 
+        personalizable: true, 
+        imagen: "https://i.pinimg.com/236x/68/25/d8/6825d8c811898a38b0d303711683925a.jpg" 
+    },
+    { 
+        nombre: "Anillo con coordenadas especiales", 
+        precio: 60.00, 
+        material: "Plata", 
+        personalizable: true, 
+        imagen: "https://i.pinimg.com/236x/1f/5f/f3/1f5ff357876cc6fea7c00a1a0c86c2ad.jpg" 
+    },
+    { 
+        nombre: "Llavero grabado con mensaje único", 
+        precio: 25.00, 
+        material: "Aluminio", 
+        personalizable: true, 
+        imagen: "https://i.pinimg.com/236x/61/4c/ec/614cecd18a20596d7e8914bc5c629643.jpg" 
+    },
+    { 
+        nombre: "Pulsera personalizada con charm", 
+        precio: 35.00, 
+        material: "Cuero y plata", 
+        personalizable: true, 
+        imagen: "https://i.pinimg.com/236x/d1/da/51/d1da512f67eaae5d67de7848e6715cad.jpg" 
+    }
 ];
 
 let carrito = JSON.parse(sessionStorage.getItem('carrito')) || []; 

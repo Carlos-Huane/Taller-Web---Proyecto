@@ -1,10 +1,39 @@
 const pulseras = [
-    { nombre: "Pulsera de Cuero", precio: 24.99, fecha: "2024-10-12", imagen: "../images/bracelet-img.jpg"},
-    { nombre: "Pulsera de Plata", precio: 34.99, fecha: "2024-09-20", imagen: "../images/bracelet-img.jpg" },
-    { nombre: "Pulsera Personalizada", precio: 44.99, fecha: "2024-08-10", imagen: "../images/bracelet-img.jpg" },
-    { nombre: "Pulsera de Beads", precio: 19.99, fecha: "2024-10-05", imagen: "../images/bracelet-img.jpg" },
-    { nombre: "Pulsera con Charm", precio: 29.99, fecha: "2024-09-15", imagen: "../images/bracelet-img.jpg" },
-    { nombre: "Pulsera de Acero Inoxidable", precio: 39.99, fecha: "2024-08-01", imagen: "../images/bracelet-img.jpg" },
+    { 
+        nombre: "Pulsera minimalista de acero", 
+        precio: 30.00, 
+        material: "Acero inoxidable", 
+        personalizable: false, 
+        imagen: "https://i.pinimg.com/236x/1f/db/e8/1fdbe8afde2e37bf27688fd6cc911d6c.jpg" 
+    },
+    { 
+        nombre: "Pulsera de cuentas naturales", 
+        precio: 20.00, 
+        material: "Piedras naturales", 
+        personalizable: false, 
+        imagen: "https://i.pinimg.com/236x/e2/cf/29/e2cf29a98a9a1a66a5330a03590d51c2.jpg" 
+    },
+    { 
+        nombre: "Pulsera tejida con cierre ajustable", 
+        precio: 15.00, 
+        material: "Hilo encerado", 
+        personalizable: true, 
+        imagen: "https://i.pinimg.com/236x/2e/b9/a4/2eb9a420fdf6a03ddf1bf75eae65e272.jpg" 
+    },
+    { 
+        nombre: "Pulsera con dijes colgantes", 
+        precio: 35.00, 
+        material: "Plata y cristal", 
+        personalizable: false, 
+        imagen: "https://i.pinimg.com/474x/d3/f7/99/d3f799f619cff26a95afa7e61070da20.jpg" 
+    },
+    { 
+        nombre: "Pulsera trenzada con detalles dorados", 
+        precio: 40.00, 
+        material: "Cuero y latón", 
+        personalizable: false, 
+        imagen: "https://i.pinimg.com/236x/e5/40/49/e54049147acfbd3c8372db7887d90f29.jpg" 
+    }
 ];
 
 let carrito = JSON.parse(sessionStorage.getItem('carrito')) || []; // Carga el carrito desde sessionStorage
